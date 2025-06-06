@@ -27,6 +27,12 @@ class RealtimePriceComponent {
             silver: null
         };
         
+        // Previous data for real-time comparison
+        this.previousData = {
+            gold: null,
+            silver: null
+        };
+        
         
         this.updateTimer = null;
         this.init();
@@ -98,7 +104,8 @@ class RealtimePriceComponent {
                 'ทองคำ 96.5%',
                 'ออสสิริส',
                 goldData.G965B,
-                this.yesterdayData.gold?.G965B
+                this.yesterdayData.gold?.G965B,
+                this.previousData.gold?.G965B
             );
             
             // ทอง 99.99% ออสสิริส
@@ -106,7 +113,8 @@ class RealtimePriceComponent {
                 'ทองคำ 99.99%',
                 'ออสสิริส',
                 goldData.G9999B,
-                this.yesterdayData.gold?.G9999B
+                this.yesterdayData.gold?.G9999B,
+                this.previousData.gold?.G9999B
             );
             
             // Spot Gold USD
@@ -114,7 +122,8 @@ class RealtimePriceComponent {
                 'Spot Gold',
                 'USD/oz',
                 goldData.G9999US,
-                this.yesterdayData.gold?.G9999US
+                this.yesterdayData.gold?.G9999US,
+                this.previousData.gold?.G9999US
             );
             
             // ทอง 99.99% กิโลกรัม
@@ -122,7 +131,8 @@ class RealtimePriceComponent {
                 'ทองคำ 99.99%',
                 'กิโลกรัม',
                 goldData.G9999KG,
-                this.yesterdayData.gold?.G9999KG
+                this.yesterdayData.gold?.G9999KG,
+                this.previousData.gold?.G9999KG
             );
             
             // สมาคมฯ 96.5%
@@ -130,7 +140,8 @@ class RealtimePriceComponent {
                 'ทองคำ 96.5%',
                 'สมาคมฯ',
                 goldData.G965B,
-                this.yesterdayData.gold?.G965B
+                this.yesterdayData.gold?.G965B,
+                this.previousData.gold?.G965B
             );
         }
         
@@ -140,7 +151,8 @@ class RealtimePriceComponent {
                 'Silver',
                 'USD/oz',
                 silverData.Silver,
-                this.yesterdayData.silver?.Silver
+                this.yesterdayData.silver?.Silver,
+                this.previousData.silver?.Silver
             );
             
             // เงิน THB
@@ -148,34 +160,45 @@ class RealtimePriceComponent {
                 'แท่งเงิน',
                 'THB/kg',
                 silverData.Silver,
-                this.yesterdayData.silver?.Silver
+                this.yesterdayData.silver?.Silver,
+                this.previousData.silver?.Silver
             );
         }
         
         return html;
     }
 
-    renderGoldCard(title, type, data, yesterdayData) {
-        const change = this.calculateChange(data.offer, yesterdayData?.offer);
+    renderGoldCard(title, type, data, yesterdayData, previousData = null) {
+        // Real-time changes (current vs previous update)
+        const bidChangeRT = this.calculateChange(data.bid, previousData?.bid);
+        const offerChangeRT = this.calculateChange(data.offer, previousData?.offer);
+        
+        // Yesterday changes (current vs yesterday) - for "เปลี่ยนแปลง" display
+        const overallChange = this.calculateChange(data.offer, yesterdayData?.offer);
+        
+        const cardClass = this.getCardClass(offerChangeRT); // Card BG based on real-time change
+        const bidClass = this.getValueClass(bidChangeRT);   // Bid BG based on real-time change
+        const offerClass = this.getValueClass(offerChangeRT); // Offer BG based on real-time change
+        
         return `
-            <div class="realtime-price-card">
+            <div class="realtime-price-card ${cardClass}">
                 <div class="price-card-header">
                     <h3 class="price-card-title">${title}</h3>
                     <span class="price-card-type">${type}</span>
                 </div>
                 <div class="price-values">
-                    <div class="price-value">
+                    <div class="price-value ${bidClass}">
                         <div class="price-label">ซื้อ</div>
                         <div class="price-amount">${this.formatNumber(data.bid)}</div>
                     </div>
-                    <div class="price-value">
+                    <div class="price-value ${offerClass}">
                         <div class="price-label">ขาย</div>
                         <div class="price-amount">${this.formatNumber(data.offer)}</div>
                     </div>
                     <div class="price-value">
                         <div class="price-label">เปลี่ยนแปลง</div>
-                        <div class="price-change ${this.getChangeClass(change)}">
-                            ${this.formatChange(change)}
+                        <div class="price-change ${this.getChangeClass(overallChange)}">
+                            ${this.formatChange(overallChange)}
                         </div>
                     </div>
                 </div>
@@ -183,27 +206,36 @@ class RealtimePriceComponent {
         `;
     }
 
-    renderGoldAssocCard(title, type, data, yesterdayData) {
-        const change = this.calculateChange(data.offer_asso, yesterdayData?.offer_asso);
+    renderGoldAssocCard(title, type, data, yesterdayData, previousData = null) {
+        // Real-time changes
+        const bidChangeRT = this.calculateChange(data.bid_asso, previousData?.bid_asso);
+        const offerChangeRT = this.calculateChange(data.offer_asso, previousData?.offer_asso);
+        // Yesterday changes
+        const overallChange = this.calculateChange(data.offer_asso, yesterdayData?.offer_asso);
+        
+        const cardClass = this.getCardClass(offerChangeRT);
+        const bidClass = this.getValueClass(bidChangeRT);
+        const offerClass = this.getValueClass(offerChangeRT);
+        
         return `
-            <div class="realtime-price-card">
+            <div class="realtime-price-card ${cardClass}">
                 <div class="price-card-header">
                     <h3 class="price-card-title">${title}</h3>
                     <span class="price-card-type">${type}</span>
                 </div>
                 <div class="price-values">
-                    <div class="price-value">
+                    <div class="price-value ${bidClass}">
                         <div class="price-label">ซื้อ</div>
                         <div class="price-amount">${this.formatNumber(data.bid_asso)}</div>
                     </div>
-                    <div class="price-value">
+                    <div class="price-value ${offerClass}">
                         <div class="price-label">ขาย</div>
                         <div class="price-amount">${this.formatNumber(data.offer_asso)}</div>
                     </div>
                     <div class="price-value">
                         <div class="price-label">เปลี่ยนแปลง</div>
-                        <div class="price-change ${this.getChangeClass(change)}">
-                            ${this.formatChange(change)}
+                        <div class="price-change ${this.getChangeClass(overallChange)}">
+                            ${this.formatChange(overallChange)}
                         </div>
                     </div>
                 </div>
@@ -211,27 +243,36 @@ class RealtimePriceComponent {
         `;
     }
 
-    renderSpotGoldCard(title, type, data, yesterdayData) {
-        const change = this.calculateChange(data.offer, yesterdayData?.offer);
+    renderSpotGoldCard(title, type, data, yesterdayData, previousData = null) {
+        // Real-time changes
+        const bidChangeRT = this.calculateChange(data.bid, previousData?.bid);
+        const offerChangeRT = this.calculateChange(data.offer, previousData?.offer);
+        // Yesterday changes
+        const overallChange = this.calculateChange(data.offer, yesterdayData?.offer);
+        
+        const cardClass = this.getCardClass(offerChangeRT);
+        const bidClass = this.getValueClass(bidChangeRT);
+        const offerClass = this.getValueClass(offerChangeRT);
+        
         return `
-            <div class="realtime-price-card">
+            <div class="realtime-price-card ${cardClass}">
                 <div class="price-card-header">
                     <h3 class="price-card-title">${title}</h3>
                     <span class="price-card-type">${type}</span>
                 </div>
                 <div class="price-values">
-                    <div class="price-value">
+                    <div class="price-value ${bidClass}">
                         <div class="price-label">ซื้อ</div>
                         <div class="price-amount">$${this.formatNumber(data.bid, 2)}</div>
                     </div>
-                    <div class="price-value">
+                    <div class="price-value ${offerClass}">
                         <div class="price-label">ขาย</div>
                         <div class="price-amount">$${this.formatNumber(data.offer, 2)}</div>
                     </div>
                     <div class="price-value">
                         <div class="price-label">เปลี่ยนแปลง</div>
-                        <div class="price-change ${this.getChangeClass(change)}">
-                            ${this.formatChange(change, 2)}
+                        <div class="price-change ${this.getChangeClass(overallChange)}">
+                            ${this.formatChange(overallChange, 2)}
                         </div>
                     </div>
                 </div>
@@ -239,27 +280,36 @@ class RealtimePriceComponent {
         `;
     }
 
-    renderGoldKgCard(title, type, data, yesterdayData) {
-        const change = this.calculateChange(data.offer, yesterdayData?.offer);
+    renderGoldKgCard(title, type, data, yesterdayData, previousData = null) {
+        // Real-time changes
+        const bidChangeRT = this.calculateChange(data.bid, previousData?.bid);
+        const offerChangeRT = this.calculateChange(data.offer, previousData?.offer);
+        // Yesterday changes
+        const overallChange = this.calculateChange(data.offer, yesterdayData?.offer);
+        
+        const cardClass = this.getCardClass(offerChangeRT);
+        const bidClass = this.getValueClass(bidChangeRT);
+        const offerClass = this.getValueClass(offerChangeRT);
+        
         return `
-            <div class="realtime-price-card">
+            <div class="realtime-price-card ${cardClass}">
                 <div class="price-card-header">
                     <h3 class="price-card-title">${title}</h3>
                     <span class="price-card-type">${type}</span>
                 </div>
                 <div class="price-values">
-                    <div class="price-value">
+                    <div class="price-value ${bidClass}">
                         <div class="price-label">ซื้อ</div>
                         <div class="price-amount">${this.formatNumber(data.bid)}</div>
                     </div>
-                    <div class="price-value">
+                    <div class="price-value ${offerClass}">
                         <div class="price-label">ขาย</div>
                         <div class="price-amount">${this.formatNumber(data.offer)}</div>
                     </div>
                     <div class="price-value">
                         <div class="price-label">เปลี่ยนแปลง</div>
-                        <div class="price-change ${this.getChangeClass(change)}">
-                            ${this.formatChange(change)}
+                        <div class="price-change ${this.getChangeClass(overallChange)}">
+                            ${this.formatChange(overallChange)}
                         </div>
                     </div>
                 </div>
@@ -267,30 +317,38 @@ class RealtimePriceComponent {
         `;
     }
 
-    renderSilverUsdCard(title, type, data, yesterdayData) {
+    renderSilverUsdCard(title, type, data, yesterdayData, previousData = null) {
         const bidSpot = parseFloat(data.bidspot);
         const offerSpot = parseFloat(data.offerspot);
-        const change = this.calculateChange(offerSpot, yesterdayData ? parseFloat(yesterdayData.offerspot) : null);
+        // Real-time changes
+        const bidChangeRT = this.calculateChange(bidSpot, previousData ? parseFloat(previousData.bidspot) : null);
+        const offerChangeRT = this.calculateChange(offerSpot, previousData ? parseFloat(previousData.offerspot) : null);
+        // Yesterday changes
+        const overallChange = this.calculateChange(offerSpot, yesterdayData ? parseFloat(yesterdayData.offerspot) : null);
+        
+        const cardClass = this.getCardClass(offerChangeRT);
+        const bidClass = this.getValueClass(bidChangeRT);
+        const offerClass = this.getValueClass(offerChangeRT);
         
         return `
-            <div class="realtime-price-card">
+            <div class="realtime-price-card ${cardClass}">
                 <div class="price-card-header">
                     <h3 class="price-card-title">${title}</h3>
                     <span class="price-card-type">${type}</span>
                 </div>
                 <div class="price-values">
-                    <div class="price-value">
+                    <div class="price-value ${bidClass}">
                         <div class="price-label">ซื้อ</div>
                         <div class="price-amount">$${this.formatNumber(bidSpot, 2)}</div>
                     </div>
-                    <div class="price-value">
+                    <div class="price-value ${offerClass}">
                         <div class="price-label">ขาย</div>
                         <div class="price-amount">$${this.formatNumber(offerSpot, 2)}</div>
                     </div>
                     <div class="price-value">
                         <div class="price-label">เปลี่ยนแปลง</div>
-                        <div class="price-change ${this.getChangeClass(change)}">
-                            ${this.formatChange(change, 2)}
+                        <div class="price-change ${this.getChangeClass(overallChange)}">
+                            ${this.formatChange(overallChange, 2)}
                         </div>
                     </div>
                 </div>
@@ -298,30 +356,38 @@ class RealtimePriceComponent {
         `;
     }
 
-    renderSilverThbCard(title, type, data, yesterdayData) {
+    renderSilverThbCard(title, type, data, yesterdayData, previousData = null) {
         const bid = parseInt(data.bid);
         const offer = parseInt(data.offer);
-        const change = this.calculateChange(offer, yesterdayData ? parseInt(yesterdayData.offer) : null);
+        // Real-time changes
+        const bidChangeRT = this.calculateChange(bid, previousData ? parseInt(previousData.bid) : null);
+        const offerChangeRT = this.calculateChange(offer, previousData ? parseInt(previousData.offer) : null);
+        // Yesterday changes
+        const overallChange = this.calculateChange(offer, yesterdayData ? parseInt(yesterdayData.offer) : null);
+        
+        const cardClass = this.getCardClass(offerChangeRT);
+        const bidClass = this.getValueClass(bidChangeRT);
+        const offerClass = this.getValueClass(offerChangeRT);
         
         return `
-            <div class="realtime-price-card">
+            <div class="realtime-price-card ${cardClass}">
                 <div class="price-card-header">
                     <h3 class="price-card-title">${title}</h3>
                     <span class="price-card-type">${type}</span>
                 </div>
                 <div class="price-values">
-                    <div class="price-value">
+                    <div class="price-value ${bidClass}">
                         <div class="price-label">ซื้อ</div>
                         <div class="price-amount">${this.formatNumber(bid)}</div>
                     </div>
-                    <div class="price-value">
+                    <div class="price-value ${offerClass}">
                         <div class="price-label">ขาย</div>
                         <div class="price-amount">${this.formatNumber(offer)}</div>
                     </div>
                     <div class="price-value">
                         <div class="price-label">เปลี่ยนแปลง</div>
-                        <div class="price-change ${this.getChangeClass(change)}">
-                            ${this.formatChange(change)}
+                        <div class="price-change ${this.getChangeClass(overallChange)}">
+                            ${this.formatChange(overallChange)}
                         </div>
                     </div>
                 </div>
@@ -338,6 +404,18 @@ class RealtimePriceComponent {
         if (change > 0) return 'positive';
         if (change < 0) return 'negative';
         return 'neutral';
+    }
+
+    getCardClass(change) {
+        if (change > 0) return 'price-up';
+        if (change < 0) return 'price-down';
+        return 'price-neutral';
+    }
+
+    getValueClass(change) {
+        if (change > 0) return 'value-up';
+        if (change < 0) return 'value-down';
+        return 'value-neutral';
     }
 
     formatChange(change, decimals = 2) {
@@ -375,6 +453,14 @@ class RealtimePriceComponent {
                 fetch(this.apiUrls.goldRealtime),
                 fetch(this.apiUrls.silverRealtime)
             ]);
+            
+            // Store previous data before updating
+            if (this.currentData.gold) {
+                this.previousData.gold = JSON.parse(JSON.stringify(this.currentData.gold));
+            }
+            if (this.currentData.silver) {
+                this.previousData.silver = JSON.parse(JSON.stringify(this.currentData.silver));
+            }
             
             this.currentData.gold = await goldResponse.json();
             this.currentData.silver = await silverResponse.json();

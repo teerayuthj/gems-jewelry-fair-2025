@@ -47,6 +47,21 @@
     transition: all 0.2s ease !important;
 }
 
+.realtime-price-card.price-up {
+    background: rgba(40, 167, 69, 0.1) !important;
+    border-color: rgba(40, 167, 69, 0.3) !important;
+}
+
+.realtime-price-card.price-down {
+    background: rgba(220, 53, 69, 0.1) !important;
+    border-color: rgba(220, 53, 69, 0.3) !important;
+}
+
+.realtime-price-card.price-neutral {
+    background: #ffffff !important;
+    border-color: #e0e0e0 !important;
+}
+
 .realtime-price-card:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
     border-color: #002458 !important;
@@ -118,6 +133,26 @@
 
 .price-change.neutral {
     color: #666666 !important;
+}
+
+/* Price value background colors for individual bid/offer changes */
+.price-value.value-up .price-amount {
+    background: rgba(40, 167, 69, 0.15) !important;
+    color: #155724 !important;
+    padding: 0.25rem 0.5rem !important;
+    border-radius: 4px !important;
+}
+
+.price-value.value-down .price-amount {
+    background: rgba(220, 53, 69, 0.15) !important;
+    color: #721c24 !important;
+    padding: 0.25rem 0.5rem !important;
+    border-radius: 4px !important;
+}
+
+.price-value.value-neutral .price-amount {
+    background: transparent !important;
+    color: #002458 !important;
 }
 
 .realtime-footer {
