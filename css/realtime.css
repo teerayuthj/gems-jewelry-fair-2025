@@ -209,15 +209,15 @@
     }
     
     .realtime-price-title {
-        font-size: 1.8rem !important;
+        font-size: 2rem !important;
     }
     
     .price-card-title {
-        font-size: 1.2rem !important;
+        font-size: 1.5rem !important;
     }
     
     .price-label {
-        font-size: 0.9rem !important;
+        font-size: 1.1rem !important;
     }
     
     .price-values {
@@ -225,39 +225,43 @@
     }
     
     .price-amount {
-        font-size: 1.3rem !important;
+        font-size: 1.6rem !important;
     }
     
     .price-change {
-        font-size: 1.1rem !important;
+        font-size: 1.4rem !important;
     }
 }
 
 @media (max-width: 480px) {
     .price-values {
-        grid-template-columns: 1fr !important;
-        gap: 0.5rem !important;
+        grid-template-columns: 1fr 1fr 1fr !important;
+        gap: 0.75rem !important;
     }
     
     .price-value {
-        padding: 0.5rem !important;
-        background: #f8f9fa !important;
+        padding: 0.75rem !important;
+        background: transparent !important;
         border-radius: 4px !important;
     }
     
     .realtime-price-title {
-        font-size: 1.6rem !important;
+        font-size: 1.8rem !important;
     }
     
     .price-card-title {
-        font-size: 1.1rem !important;
+        font-size: 1.4rem !important;
+    }
+    
+    .price-label {
+        font-size: 1rem !important;
     }
     
     .price-amount {
-        font-size: 1.2rem !important;
+        font-size: 1.5rem !important;
     }
     
     .price-change {
-        font-size: 1rem !important;
+        font-size: 1.3rem !important;
     }
 }
