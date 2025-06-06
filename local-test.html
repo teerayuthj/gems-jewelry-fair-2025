@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Test - Realtime Gold & Silver Prices</title>
+    
+    <!-- Pico CSS Framework -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    
+    <!-- Local CSS Files -->
+    <link rel="stylesheet" href="css/realtime.css">
+    
+    <style>
+        body {
+            background: #f8f9fa;
+            padding: 2rem 0;
+        }
+        .test-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .test-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .section-title {
+            background: #002458;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .control-btn {
+            background: #002458;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .control-btn:hover {
+            background: #003366;
+            transform: translateY(-1px);
+        }
+        .control-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .status {
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        .status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        .status.info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+        .api-info {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <div class="test-header">
+            <h1>🧪 Local Test - Realtime Gold & Silver Prices</h1>
+            <p>ทดสอบ Component ในเครื่องก่อน deploy ขึ้น CDN</p>
+            <div class="status info" id="connectionStatus">
+                🟡 กำลังเตรียมการทดสอบ...
+            </div>
+        </div>
+
+        <!-- Test Controls -->
+        <div class="test-section">
+            <div class="section-title">
+                🎮 Test Controls
+            </div>
+            
+            <div class="controls">
+                <button class="control-btn" onclick="testComponent()">🚀 เริ่มทดสอบ Component</button>
+                <button class="control-btn" onclick="testAPI()">🔌 ทดสอบ API Connection</button>
+                <button class="control-btn" onclick="stopUpdates()">⏹️ หยุดการอัพเดท</button>
+                <button class="control-btn" onclick="startUpdates()">▶️ เริ่มการอัพเดท</button>
+                <button class="control-btn" onclick="mockDataTest()" disabled>🚫 Mock Data ปิดใช้งาน</button>
+                <button class="control-btn" onclick="clearComponent()">🗑️ Clear Component</button>
+            </div>
+
+            <div class="api-info">
+                <strong>API URLs ปัจจุบัน:</strong><br>
+                Gold Realtime: <span id="goldRealtimeUrl"></span><br>
+                Gold Yesterday: <span id="goldYesterdayUrl"></span><br>
+                Silver Realtime: <span id="silverRealtimeUrl"></span><br>
+                Silver Yesterday: <span id="silverYesterdayUrl"></span>
+            </div>
+        </div>
+
+        <!-- Test Component 1: Full -->
+        <div class="test-section">
+            <div class="section-title">
+                🌟 Test 1: Full Component (พร้อมหัวข้อ)
+            </div>
+            <div id="realtime-prices-full"></div>
+        </div>
+
+        <!-- Test Component 2: Compact -->
+        <div class="test-section">
+            <div class="section-title">
+                📱 Test 2: Compact Component (ไม่มีหัวข้อ)
+            </div>
+            <div id="realtime-prices-compact"></div>
+        </div>
+
+        <!-- Test Component 3: Custom Interval -->
+        <div class="test-section">
+            <div class="section-title">
+                ⏱️ Test 3: Custom Update Interval (5 วินาที)
+            </div>
+            <div id="realtime-prices-custom"></div>
+        </div>
+
+        <!-- Debug Console -->
+        <div class="test-section">
+            <div class="section-title">
+                🐛 Debug Console
+            </div>
+            <div id="debugConsole" style="background: #2c3e50; color: #ecf0f1; padding: 1rem; border-radius: 6px; font-family: monospace; font-size: 0.85rem; height: 200px; overflow-y: auto;">
+                === Debug Console ===<br>
+                พร้อมสำหรับการทดสอบ...<br>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Local Scripts -->
+    <script src="scripts/realtime.js"></script>
+    
+    <script>
+        let components = {
+            full: null,
+            compact: null,
+            custom: null
+        };
+
+        // Debug logging function
+        function debugLog(message) {
+            const console = document.getElementById('debugConsole');
+            const timestamp = new Date().toLocaleTimeString('th-TH');
+            console.innerHTML += `[${timestamp}] ${message}<br>`;
+            console.scrollTop = console.scrollHeight;
+        }
+
+        // Update status
+        function updateStatus(message, type = 'info') {
+            const status = document.getElementById('connectionStatus');
+            status.className = `status ${type}`;
+            status.innerHTML = message;
+        }
+
+        // Update API URLs display
+        function updateAPIDisplay() {
+            if (components.full && components.full.apiUrls) {
+                document.getElementById('goldRealtimeUrl').textContent = components.full.apiUrls.goldRealtime;
+                document.getElementById('goldYesterdayUrl').textContent = components.full.apiUrls.goldYesterday;
+                document.getElementById('silverRealtimeUrl').textContent = components.full.apiUrls.silverRealtime;
+                document.getElementById('silverYesterdayUrl').textContent = components.full.apiUrls.silverYesterday;
+            }
+        }
+
+        // Test component initialization
+        function testComponent() {
+            try {
+                debugLog('🚀 เริ่มสร้าง Components...');
+                
+                // Create full component
+                components.full = new GemApp.RealtimePriceComponent('realtime-prices-full');
+                debugLog('✅ Full component สร้างเสร็จ');
+                
+                // Create compact component
+                components.compact = new GemApp.RealtimePriceComponent('realtime-prices-compact', {
+                    showTitle: false
+                });
+                debugLog('✅ Compact component สร้างเสร็จ');
+                
+                // Create custom interval component
+                components.custom = new GemApp.RealtimePriceComponent('realtime-prices-custom', {
+                    updateInterval: 5000,
+                    showTitle: true
+                });
+                debugLog('✅ Custom interval component สร้างเสร็จ (5 วินาที)');
+                
+                updateStatus('🟢 Components สร้างเสร็จแล้ว - กำลังโหลดข้อมูล...', 'success');
+                updateAPIDisplay();
+                
+            } catch (error) {
+                debugLog(`❌ Error: ${error.message}`);
+                updateStatus('🔴 เกิดข้อผิดพลาดในการสร้าง Components', 'error');
+            }
+        }
+
+        // Test API connection
+        async function testAPI() {
+            if (!components.full) {
+                debugLog('⚠️ กรุณาสร้าง Component ก่อน');
+                return;
+            }
+
+            debugLog('🔌 ทดสอบการเชื่อมต่อ API...');
+            updateStatus('🟡 กำลังทดสอบ API...', 'info');
+
+            try {
+                const goldUrl = components.full.apiUrls.goldRealtime;
+                const silverUrl = components.full.apiUrls.silverRealtime;
+
+                debugLog(`📡 ทดสอบ Gold API: ${goldUrl}`);
+                const goldResponse = await fetch(goldUrl);
+                const goldData = await goldResponse.json();
+                debugLog(`✅ Gold API Response: ${JSON.stringify(goldData).substring(0, 100)}...`);
+
+                debugLog(`📡 ทดสอบ Silver API: ${silverUrl}`);
+                const silverResponse = await fetch(silverUrl);
+                const silverData = await silverResponse.json();
+                debugLog(`✅ Silver API Response: ${JSON.stringify(silverData).substring(0, 100)}...`);
+
+                updateStatus('🟢 API เชื่อมต่อสำเร็จ!', 'success');
+
+            } catch (error) {
+                debugLog(`❌ API Error: ${error.message}`);
+                updateStatus('🔴 API เชื่อมต่อไม่สำเร็จ - ใช้ Mock Data', 'error');
+            }
+        }
+
+        // Use mock data - removed as requested
+        function mockDataTest() {
+            debugLog('🚫 Mock Data ถูกปิดใช้งาน - ใช้ API จริงเท่านั้น');
+            updateStatus('🚫 Mock Data ถูกปิดใช้งาน', 'info');
+        }
+
+        // Stop updates
+        function stopUpdates() {
+            debugLog('⏹️ หยุดการอัพเดททุก Components');
+            Object.values(components).forEach(component => {
+                if (component && component.stopRealTimeUpdates) {
+                    component.stopRealTimeUpdates();
+                }
+            });
+            updateStatus('⏹️ หยุดการอัพเดทแล้ว', 'info');
+        }
+
+        // Start updates
+        function startUpdates() {
+            debugLog('▶️ เริ่มการอัพเดทใหม่');
+            Object.values(components).forEach(component => {
+                if (component && component.startRealTimeUpdates) {
+                    component.startRealTimeUpdates();
+                }
+            });
+            updateStatus('▶️ เริ่มการอัพเดทใหม่แล้ว', 'success');
+        }
+
+        // Clear components
+        function clearComponent() {
+            debugLog('🗑️ ลบ Components ทั้งหมด');
+            Object.keys(components).forEach(key => {
+                if (components[key] && components[key].destroy) {
+                    components[key].destroy();
+                }
+                components[key] = null;
+            });
+            updateStatus('🗑️ ลบ Components แล้ว', 'info');
+        }
+
+        // Check if script loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.GemApp && window.GemApp.RealtimePriceComponent) {
+                debugLog('✅ RealtimePriceComponent โหลดเสร็จ');
+                updateStatus('🟢 พร้อมสำหรับการทดสอบ', 'success');
+            } else {
+                debugLog('❌ RealtimePriceComponent ไม่โหลด');
+                updateStatus('🔴 ไม่พบ RealtimePriceComponent', 'error');
+            }
+        });
+
+        // Auto-start test after page load
+        setTimeout(() => {
+            if (window.GemApp && window.GemApp.RealtimePriceComponent) {
+                debugLog('🤖 Auto-starting component test...');
+                testComponent();
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

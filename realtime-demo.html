@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realtime Gold & Silver Prices Demo</title>
+    
+    <!-- Pico CSS Framework -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    
+    <!-- Realtime Price CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.02/css/realtime.css">
+    
+    <style>
+        body {
+            background: #f8f9fa;
+            padding: 2rem 0;
+        }
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .demo-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .demo-section {
+            margin-bottom: 3rem;
+        }
+        .section-title {
+            background: #002458;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        .code-example {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .demo-result {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>🥇 Realtime Gold & Silver Prices Component</h1>
+            <p>ตัวอย่างการใช้งาน Component สำหรับแสดงราคาทองคำและเงินแบบ Real-time</p>
+            <p><strong>อัพเดททุก 3 วินาที</strong> | ใช้งานผ่าน CDN ได้ทันที</p>
+        </div>
+
+        <!-- Full Component Example -->
+        <div class="demo-section">
+            <div class="section-title">
+                🌟 ตัวอย่างแบบเต็ม (Full Component)
+            </div>
+            
+            <div class="code-example">
+                <pre>&lt;!-- CSS --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.02/css/realtime.css"&gt;
+
+&lt;!-- HTML --&gt;
+&lt;div id="realtime-prices-full"&gt;&lt;/div&gt;
+
+&lt;!-- JavaScript --&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.02/scripts/realtime.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+document.addEventListener('DOMContentLoaded', function() {
+    new GemApp.RealtimePriceComponent('realtime-prices-full');
+});
+&lt;/script&gt;</pre>
+            </div>
+            
+            <div class="demo-result">
+                <div id="realtime-prices-full"></div>
+            </div>
+        </div>
+
+        <!-- Compact Example -->
+        <div class="demo-section">
+            <div class="section-title">
+                📱 ตัวอย่างแบบกะทัดรัด (Without Title)
+            </div>
+            
+            <div class="code-example">
+                <pre>&lt;!-- HTML --&gt;
+&lt;div id="realtime-prices-compact"&gt;&lt;/div&gt;
+
+&lt;!-- JavaScript --&gt;
+&lt;script&gt;
+new GemApp.RealtimePriceComponent('realtime-prices-compact', {
+    showTitle: false,
+    updateInterval: 5000 // อัพเดททุก 5 วินาที
+});
+&lt;/script&gt;</pre>
+            </div>
+            
+            <div class="demo-result">
+                <div id="realtime-prices-compact"></div>
+            </div>
+        </div>
+
+        <!-- API Configuration -->
+        <div class="demo-section">
+            <div class="section-title">
+                🔧 การกำหนดค่า API URLs
+            </div>
+            
+            <div class="code-example">
+                <pre>&lt;script&gt;
+// สร้าง component และกำหนด API URLs
+const realtimeComponent = new GemApp.RealtimePriceComponent('realtime-prices');
+
+// กำหนด URL ของ API จริง
+realtimeComponent.apiUrls = {
+    goldRealtime: 'https://your-api.com/gold/realtime',
+    goldYesterday: 'https://your-api.com/gold/yesterday', 
+    silverRealtime: 'https://your-api.com/silver/realtime',
+    silverYesterday: 'https://your-api.com/silver/yesterday'
+};
+&lt;/script&gt;</pre>
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="demo-section">
+            <div class="section-title">
+                ✨ Features
+            </div>
+            
+            <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                    <div>
+                        <h4>📊 ข้อมูลครบถ้วน</h4>
+                        <ul>
+                            <li>ทองคำ 96.5% ออสสิริส</li>
+                            <li>ทองคำ 99.99% ออสสิริส</li>
+                            <li>Spot Gold USD</li>
+                            <li>ทองคำ 99.99% กิโลกรัม</li>
+                            <li>สมาคมฯ 96.5%</li>
+                            <li>เงิน USD/oz</li>
+                            <li>แท่งเงิน THB/kg</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4>⚡ Real-time Updates</h4>
+                        <ul>
+                            <li>อัพเดททุก 3 วินาที</li>
+                            <li>คำนวณ Change จาก Yesterday</li>
+                            <li>แสดงสีตามการเปลี่ยนแปลง</li>
+                            <li>Status indicator</li>
+                            <li>Error handling</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4>🎨 Design Features</h4>
+                        <ul>
+                            <li>Clean minimal design</li>
+                            <li>Responsive grid layout</li>
+                            <li>Subtle borders</li>
+                            <li>!important CSS protection</li>
+                            <li>Color theme #002458</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copy-Paste Example -->
+        <div class="demo-section">
+            <div class="section-title">
+                📋 Copy & Paste Ready
+            </div>
+            
+            <div class="code-example">
+                <pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="th"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Gold & Silver Prices&lt;/title&gt;
+    
+    &lt;!-- CSS --&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.02/css/realtime.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- HTML --&gt;
+    &lt;div id="realtime-prices"&gt;&lt;/div&gt;
+
+    &lt;!-- JavaScript --&gt;
+    &lt;script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.02/scripts/realtime.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+    document.addEventListener('DOMContentLoaded', function() {
+        // สร้าง component
+        const realtime = new GemApp.RealtimePriceComponent('realtime-prices');
+        
+        // กำหนด API URLs (เปลี่ยนเป็น URL จริงของคุณ)
+        realtime.apiUrls = {
+            goldRealtime: 'YOUR_GOLD_REALTIME_API_URL',
+            goldYesterday: 'YOUR_GOLD_YESTERDAY_API_URL',
+            silverRealtime: 'YOUR_SILVER_REALTIME_API_URL',
+            silverYesterday: 'YOUR_SILVER_YESTERDAY_API_URL'
+        };
+    });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.02/scripts/realtime.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize full component
+            new GemApp.RealtimePriceComponent('realtime-prices-full');
+            
+            // Initialize compact component
+            new GemApp.RealtimePriceComponent('realtime-prices-compact', {
+                showTitle: false,
+                updateInterval: 5000
+            });
+        });
+    </script>
+</body>
+</html>

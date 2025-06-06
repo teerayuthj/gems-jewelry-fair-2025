@@ -9,12 +9,12 @@
 ```html
 <!-- 1. เพิ่ม CSS ใน <head> -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/hero.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/stats.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/features.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/cta.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/calculator.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.02/css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.02/css/hero.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.02/css/stats.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.02/css/features.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.02/css/cta.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.02/css/calculator.css">
 
 <!-- 2. เพิ่ม HTML elements ในตำแหน่งที่ต้องการ -->
 <div id="hero"></div>
@@ -24,9 +24,9 @@
 <div id="cta"></div>
 
 <!-- 3. เพิ่ม JavaScript ก่อนปิด </body> -->
-<script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/scripts/common.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/scripts/components.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/scripts/calculator.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.02/scripts/common.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.02/scripts/components.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.02/scripts/calculator.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('hero')) new GemApp.HeroSection('hero');
