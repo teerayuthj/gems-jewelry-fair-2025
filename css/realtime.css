@@ -19,7 +19,7 @@
 }
 
 .realtime-price-title {
-    font-size: 1.5rem !important;
+    font-size: 2.2rem !important;
     font-weight: 600 !important;
     color: #002458 !important;
     margin: 0 !important;
@@ -27,7 +27,7 @@
 }
 
 .realtime-price-subtitle {
-    font-size: 0.9rem !important;
+    font-size: 1.2rem !important;
     color: #666666 !important;
     margin: 0.5rem 0 0 0 !important;
 }
@@ -77,14 +77,14 @@
 }
 
 .price-card-title {
-    font-size: 1rem !important;
+    font-size: 1.4rem !important;
     font-weight: 600 !important;
     color: #002458 !important;
     margin: 0 !important;
 }
 
 .price-card-type {
-    font-size: 0.8rem !important;
+    font-size: 1rem !important;
     color: #666666 !important;
     background: #f8f9fa !important;
     padding: 0.25rem 0.5rem !important;
@@ -103,7 +103,7 @@
 }
 
 .price-label {
-    font-size: 0.75rem !important;
+    font-size: 1rem !important;
     color: #666666 !important;
     margin-bottom: 0.25rem !important;
     text-transform: uppercase !important;
@@ -111,15 +111,15 @@
 }
 
 .price-amount {
-    font-size: 1rem !important;
-    font-weight: 600 !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
     color: #002458 !important;
     margin: 0 !important;
 }
 
 .price-change {
-    font-size: 0.9rem !important;
-    font-weight: 500 !important;
+    font-size: 1.3rem !important;
+    font-weight: 600 !important;
     margin: 0 !important;
 }
 
@@ -163,7 +163,7 @@
 }
 
 .last-updated {
-    font-size: 0.8rem !important;
+    font-size: 1.1rem !important;
     color: #666666 !important;
     margin: 0 !important;
     display: flex !important;
@@ -209,7 +209,15 @@
     }
     
     .realtime-price-title {
-        font-size: 1.25rem !important;
+        font-size: 1.8rem !important;
+    }
+    
+    .price-card-title {
+        font-size: 1.2rem !important;
+    }
+    
+    .price-label {
+        font-size: 0.9rem !important;
     }
     
     .price-values {
@@ -217,7 +225,11 @@
     }
     
     .price-amount {
-        font-size: 0.9rem !important;
+        font-size: 1.3rem !important;
+    }
+    
+    .price-change {
+        font-size: 1.1rem !important;
     }
 }
 
@@ -231,5 +243,21 @@
         padding: 0.5rem !important;
         background: #f8f9fa !important;
         border-radius: 4px !important;
+    }
+    
+    .realtime-price-title {
+        font-size: 1.6rem !important;
+    }
+    
+    .price-card-title {
+        font-size: 1.1rem !important;
+    }
+    
+    .price-amount {
+        font-size: 1.2rem !important;
+    }
+    
+    .price-change {
+        font-size: 1rem !important;
     }
 }
