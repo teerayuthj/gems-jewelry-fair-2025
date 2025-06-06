@@ -1,0 +1,414 @@
+/* ====== Calculator Styles ====== */
+.calculator-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin: 2rem auto;
+}
+
+.calculator-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #FFD700, #C0C0C0);
+}
+
+.calculator-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+/* ====== Metal Selector ====== */
+.metal-selector {
+    display: flex;
+    background: #f5f5f5;
+    border-radius: 15px;
+    padding: 5px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.metal-option {
+    flex: 1;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 16px;
+    position: relative;
+    z-index: 2;
+}
+
+.metal-option.gold {
+    color: #B8860B;
+}
+
+.metal-option.silver {
+    color: #708090;
+}
+
+.metal-option.active {
+    color: white;
+    transform: translateY(-2px);
+}
+
+.selector-bg {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: calc(50% - 5px);
+    height: calc(100% - 10px);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.selector-bg.gold {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.selector-bg.silver {
+    background: linear-gradient(135deg, #C0C0C0, #A9A9A9);
+    box-shadow: 0 5px 15px rgba(192, 192, 192, 0.3);
+    transform: translateX(100%);
+}
+
+/* ====== Input Styles ====== */
+.input-section {
+    margin-bottom: 30px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 14px;
+}
+
+.input-row {
+    display: flex;
+    gap: 15px;
+    align-items: flex-end;
+}
+
+.input-field {
+    flex: 2;
+}
+
+.unit-selector {
+    flex: 1;
+}
+
+.calc-input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    background: #fafafa;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.calc-input:focus {
+    outline: none;
+    border-color: #002458;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(0, 36, 88, 0.1);
+    color: #2c3e50;
+}
+
+.calc-input::placeholder {
+    color: #bdc3c7;
+    font-weight: 400;
+}
+
+.calc-select {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 16px;
+    background: #fafafa;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.calc-select:focus {
+    outline: none;
+    border-color: #002458;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(0, 36, 88, 0.1);
+    color: #2c3e50;
+}
+
+/* ====== Gold Type Selector ====== */
+.gold-type-selector {
+    margin-bottom: 20px;
+}
+
+.gold-type-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.gold-type-option {
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    background: #fafafa;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.gold-type-option.active {
+    border-color: #002458;
+    background: linear-gradient(135deg, #e6f2ff, #f0f8ff);
+    color: #002458;
+    font-weight: 600;
+}
+
+/* ====== Price Display ====== */
+.price-display {
+    background: linear-gradient(135deg, #f8f9ff, #e8ecff);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    border: 2px solid #e0e8ff;
+}
+
+.price-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.price-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.price-label {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.price-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.buy-price {
+    color: #c0392b;
+    font-weight: 700;
+}
+
+.sell-price {
+    color: #27ae60;
+    font-weight: 700;
+}
+
+.total-section {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+}
+
+.total-label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.total-price {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 15px 0;
+    color: #2c3e50;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.currency {
+    font-size: 16px;
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+.last-updated {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #95a5a6;
+    text-align: center;
+}
+
+.status-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #27ae60;
+    margin-right: 5px;
+    animation: pulse 2s infinite;
+}
+
+.info-text {
+    background: #fff3cd;
+    border: 1px solid #ffeaa7;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #856404;
+    line-height: 1.5;
+}
+
+/* ====== Calculator Responsive ====== */
+@media (max-width: 768px) {
+    .calculator-container {
+        padding: 25px;
+        margin: 1rem;
+        max-width: 100%;
+    }
+    
+    .calculator-title {
+        font-size: 22px;
+        line-height: 1.3;
+    }
+    
+    .input-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .calc-input {
+        font-size: 16px;
+        padding: 14px 18px;
+    }
+    
+    .calc-select {
+        font-size: 15px;
+        padding: 14px 18px;
+    }
+    
+    .metal-option {
+        padding: 12px;
+        font-size: 15px;
+    }
+    
+    .price-info {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .price-item {
+        padding: 14px;
+    }
+    
+    .price-value {
+        font-size: 15px;
+    }
+    
+    .gold-type-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .gold-type-option {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .total-price {
+        font-size: 26px;
+    }
+    
+    .info-text {
+        font-size: 12px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator-container {
+        padding: 20px;
+        margin: 0.5rem;
+    }
+    
+    .calculator-title {
+        font-size: 18px;
+    }
+    
+    .calc-input {
+        font-size: 16px;
+        padding: 12px 16px;
+    }
+    
+    .calc-select {
+        font-size: 14px;
+        padding: 12px 16px;
+    }
+    
+    .metal-option {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .price-item {
+        padding: 12px;
+    }
+    
+    .price-value {
+        font-size: 14px;
+    }
+    
+    .gold-type-option {
+        padding: 10px;
+        font-size: 13px;
+    }
+    
+    .total-price {
+        font-size: 22px;
+    }
+    
+    .price-label {
+        font-size: 11px;
+    }
+}

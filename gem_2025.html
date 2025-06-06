@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold & Silver Analytics - Smart Investment Insights</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/stats.css">
+    <link rel="stylesheet" href="css/features.css">
+    <link rel="stylesheet" href="css/cta.css">
+    <link rel="stylesheet" href="css/calculator.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div id="hero"></div>
+
+    <!-- Stats Section -->
+    <div id="stats"></div>
+
+    <!-- Features Section -->
+    <div id="features-container"></div>
+
+    <!-- Calculator Section -->
+    <section id="calculator" style="padding: 4rem 0; background: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">คำนวณราคาทองคำและแท่งเงิน</h2>
+            <div id="calculator-app"></div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <div id="cta"></div>
+
+    <!-- Scripts -->
+    <script src="scripts/common.js"></script>
+    <script src="scripts/components.js"></script>
+    <script src="scripts/calculator.js"></script>
+    
+    <!-- Initialize App -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize smooth scrolling
+            new GemApp.SmoothScrollHandler();
+            
+            // Initialize components
+            new GemApp.HeroSection('hero');
+            new GemApp.StatsSection('stats');
+            new GemApp.FeaturesSection('features-container');
+            new GemApp.CTASection('cta');
+            
+            // Initialize calculator
+            new GemApp.GoldSilverCalculator('calculator-app');
+            
+            console.log('🥇 GEM Analytics App Initialized Successfully!');
+        });
+
+            // Add smooth scroll behavior for navigation
+            document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        // Account for fixed nav height
+                        const navHeight = 80;
+                        const targetPosition = target.offsetTop - navHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Add navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (nav) {  // Check if nav exists
+                    if (window.scrollY > 100) {
+                        nav.style.background = 'rgba(255,255,255,0.98)';
+                        nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+                    } else {
+                        nav.style.background = 'rgba(255,255,255,0.95)';
+                        nav.style.boxShadow = 'none';
+                    }
+                }
+            });
+    </script>
+
+    <!-- Add body padding for fixed navigation -->
+    <style>
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            nav > div {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav > div > div:last-child {
+                display: flex;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            body {
+                padding-top: 120px;
+            }
+        }
+    </style>
+    <script src='https://cdn.jotfor.ms/agent/embedjs/0197199a3b4178d4bb63a5c27b1ec73702ca/embed.js?skipWelcome=1&maximizable=1'></script>
+</body>
+</html>

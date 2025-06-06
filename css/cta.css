@@ -1,0 +1,102 @@
+/* ====== CTA Section Styles ====== */
+.cta-section {
+    text-align: center;
+    padding: 6rem 2rem;
+    background: var(--bg-light);
+    margin: 4rem 0 0 0;
+}
+
+.cta-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.cta-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+}
+
+.cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* LINE Button Styles */
+.line-button {
+    background: linear-gradient(135deg, #00c300, #00b300) !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(0, 195, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.line-button:hover {
+    background: linear-gradient(135deg, #00b300, #00a300) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 195, 0, 0.4);
+    color: white;
+}
+
+.line-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.line-button:hover:before {
+    left: 100%;
+}
+
+.line-icon {
+    margin-right: 0.5rem;
+    font-size: 1.2em;
+}
+
+/* Secondary Button Styles */
+.secondary-button {
+    background: transparent !important;
+    border: 2px solid var(--gold-color) !important;
+    color: var(--gold-color) !important;
+}
+
+.secondary-button:hover {
+    background: var(--gold-color) !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(243, 156, 18, 0.3);
+}
+
+/* ====== CTA Responsive ======
+@media (max-width: 768px) {
+    .cta-section {
+        padding: 4rem 1rem;
+    }
+    
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .cta-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .line-button,
+    .secondary-button {
+        width: 100%;
+        max-width: 300px;
+        padding: 1.2rem 2rem;
+        font-size: 1.1rem;
+    }
+}
