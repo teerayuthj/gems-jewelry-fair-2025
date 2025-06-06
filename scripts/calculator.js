@@ -211,8 +211,10 @@ class GoldSilverCalculator {
             
             if (this.currentGoldType === '99.99_osiris_kg') {
                 // แสดงราคาต่อกิโลกรัม
-                sellPriceElement.textContent = GemApp.Utils.formatNumber(currentPrices.offer);
-                buyPriceElement.textContent = GemApp.Utils.formatNumber(currentPrices.bid);
+                sellPriceElement.textContent = window.GemApp && window.GemApp.Utils ? 
+                    window.GemApp.Utils.formatNumber(currentPrices.offer) : currentPrices.offer.toLocaleString();
+                buyPriceElement.textContent = window.GemApp && window.GemApp.Utils ? 
+                    window.GemApp.Utils.formatNumber(currentPrices.bid) : currentPrices.bid.toLocaleString();
                 priceLabels[0].textContent = 'ราคาขาย (ต่อกิโลกรัม)';
                 priceLabels[1].textContent = 'ราคาซื้อ (ต่อกิโลกรัม)';
             } else {
@@ -277,12 +279,14 @@ class GoldSilverCalculator {
             }
         }
         
-        totalPriceElement.textContent = GemApp.Utils.formatNumber(totalPrice);
+        totalPriceElement.textContent = window.GemApp && window.GemApp.Utils ? 
+            window.GemApp.Utils.formatNumber(totalPrice) : totalPrice.toLocaleString();
     }
 
     updateLastUpdated() {
         const lastUpdatedElement = this.container.querySelector('#lastUpdated');
-        lastUpdatedElement.textContent = GemApp.Utils.updateLastUpdated();
+        lastUpdatedElement.textContent = window.GemApp && window.GemApp.Utils ? 
+            window.GemApp.Utils.updateLastUpdated() : new Date().toLocaleString('th-TH');
     }
 
     async fetchPricesFromAPI() {
@@ -358,4 +362,7 @@ class GoldSilverCalculator {
 }
 
 // Export to global scope
+// Ensure GemApp namespace exists
+window.GemApp = window.GemApp || {};
+
 window.GemApp.GoldSilverCalculator = GoldSilverCalculator;

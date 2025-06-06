@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy & Paste Examples - Gold & Silver Analytics CDN</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem;
+            background: #f8f9fa;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid #f39c12;
+            padding-bottom: 1rem;
+        }
+        h2 {
+            color: #34495e;
+            border-left: 4px solid #3498db;
+            padding-left: 1rem;
+            margin-top: 2rem;
+        }
+        h3 {
+            color: #e74c3c;
+            margin-top: 1.5rem;
+        }
+        .code-section {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            position: relative;
+            margin: 1rem 0;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+        .copy-btn:hover {
+            background: #2980b9;
+        }
+        .example-box {
+            background: #e8f5e8;
+            border: 1px solid #27ae60;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+        .info-box {
+            background: #e3f2fd;
+            border: 1px solid #2196f3;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .component-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1rem;
+            background: #f9f9f9;
+        }
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+        .highlight {
+            background: #f39c12;
+            color: white;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Copy & Paste Examples</h1>
+        <p style="text-align: center; font-size: 1.1rem; color: #7f8c8d;">
+            คัดลอกโค้ดด้านล่างไปวางในเว็บไซต์ของคุณ - ใช้งานได้ทันที!
+        </p>
+
+        <!-- Full Website Example -->
+        <h2>🌟 แบบเต็ม (เว็บไซต์สมบูรณ์)</h2>
+        <div class="example-box">
+            <p><strong>สำหรับใช้ใน website ที่มีอยู่แล้ว:</strong> คัดลอกแต่ละส่วนไปวางในตำแหน่งที่เหมาะสม</p>
+        </div>
+
+        <h3>📝 ส่วนที่ 1: CSS (วางใน &lt;head&gt;)</h3>
+        <div class="code-section">
+            <button class="copy-btn" onclick="copyToClipboard('css-full')">📋 Copy</button>
+            <pre id="css-full"><!-- CSS Files (วางใน &lt;head&gt;) -->
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/style.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/hero.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/stats.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/features.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/cta.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/calculator.css"&gt;</pre>
+        </div>
+
+        <h3>🏗️ ส่วนที่ 2: HTML (วางในตำแหน่งที่ต้องการ)</h3>
+        <div class="code-section">
+            <button class="copy-btn" onclick="copyToClipboard('html-full')">📋 Copy</button>
+            <pre id="html-full"><!-- HTML Elements (วางในตำแหน่งที่ต้องการแสดงผล) -->
+&lt;div id="hero"&gt;&lt;/div&gt;
+&lt;div id="stats"&gt;&lt;/div&gt;
+&lt;div id="features-container"&gt;&lt;/div&gt;
+&lt;div id="calculator-app"&gt;&lt;/div&gt;
+&lt;div id="cta"&gt;&lt;/div&gt;</pre>
+        </div>
+
+        <h3>⚡ ส่วนที่ 3: JavaScript (วางก่อนปิด &lt;/body&gt;)</h3>
+        <div class="code-section">
+            <button class="copy-btn" onclick="copyToClipboard('js-full')">📋 Copy</button>
+            <pre id="js-full"><!-- JavaScript Files (วางก่อนปิด &lt;/body&gt;) -->
+&lt;script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/scripts/common.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/scripts/components.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/scripts/calculator.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.getElementById('hero')) new GemApp.HeroSection('hero');
+    if (document.getElementById('stats')) new GemApp.StatsSection('stats');
+    if (document.getElementById('features-container')) new GemApp.FeaturesSection('features-container');
+    if (document.getElementById('calculator-app')) new GemApp.GoldSilverCalculator('calculator-app');
+    if (document.getElementById('cta')) new GemApp.CTASection('cta');
+});
+&lt;/script&gt;</pre>
+        </div>
+
+        <!-- Modular Examples -->
+        <h2>🎯 แบบเลือกส่วน (Components แยก)</h2>
+
+        <div class="component-grid">
+            <!-- Calculator Only -->
+            <div class="component-card">
+                <h3>🧮 เฉพาะเครื่องคำนวณ</h3>
+                <div class="code-section">
+                    <button class="copy-btn" onclick="copyToClipboard('calc-only')">📋 Copy</button>
+                    <pre id="calc-only">&lt;!-- CSS --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/style.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/calculator.css"&gt;
+
+&lt;!-- HTML --&gt;
+&lt;div id="calculator-app"&gt;&lt;/div&gt;
+
+&lt;!-- JS --&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/scripts/common.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/scripts/calculator.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+document.addEventListener('DOMContentLoaded', function() {
+    new GemApp.GoldSilverCalculator('calculator-app');
+});
+&lt;/script&gt;</pre>
+                </div>
+            </div>
+
+            <!-- Hero Only -->
+            <div class="component-card">
+                <h3>🎭 เฉพาะ Hero Section</h3>
+                <div class="code-section">
+                    <button class="copy-btn" onclick="copyToClipboard('hero-only')">📋 Copy</button>
+                    <pre id="hero-only">&lt;!-- CSS --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/style.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/hero.css"&gt;
+
+&lt;!-- HTML --&gt;
+&lt;div id="hero"&gt;&lt;/div&gt;
+
+&lt;!-- JS --&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/scripts/common.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/scripts/components.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+document.addEventListener('DOMContentLoaded', function() {
+    new GemApp.HeroSection('hero');
+});
+&lt;/script&gt;</pre>
+                </div>
+            </div>
+
+            <!-- Stats Only -->
+            <div class="component-card">
+                <h3>📊 เฉพาะ Stats Section</h3>
+                <div class="code-section">
+                    <button class="copy-btn" onclick="copyToClipboard('stats-only')">📋 Copy</button>
+                    <pre id="stats-only">&lt;!-- CSS --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/style.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/stats.css"&gt;
+
+&lt;!-- HTML --&gt;
+&lt;div id="stats"&gt;&lt;/div&gt;
+
+&lt;!-- JS --&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/scripts/common.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/scripts/components.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+document.addEventListener('DOMContentLoaded', function() {
+    new GemApp.StatsSection('stats');
+});
+&lt;/script&gt;</pre>
+                </div>
+            </div>
+
+            <!-- CTA Only -->
+            <div class="component-card">
+                <h3>📢 เฉพาะ Call-to-Action</h3>
+                <div class="code-section">
+                    <button class="copy-btn" onclick="copyToClipboard('cta-only')">📋 Copy</button>
+                    <pre id="cta-only">&lt;!-- CSS --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/style.css"&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/cta.css"&gt;
+
+&lt;!-- HTML --&gt;
+&lt;div id="cta"&gt;&lt;/div&gt;
+
+&lt;!-- JS --&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/scripts/common.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/scripts/components.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+document.addEventListener('DOMContentLoaded', function() {
+    new GemApp.CTASection('cta');
+});
+&lt;/script&gt;</pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Tips -->
+        <h2>💡 เคล็ดลับสำคัญ</h2>
+
+        <div class="warning-box">
+            <h3>⚠️ ข้อควรระวัง</h3>
+            <ul>
+                <li><span class="highlight">โหลด common.js ก่อนเสมอ</span> - มี utilities ที่ไฟล์อื่นต้องใช้</li>
+                <li><span class="highlight">ใช้ DOMContentLoaded</span> - รอ DOM โหลดเสร็จก่อน</li>
+                <li><span class="highlight">ตรวจสอบ element ID</span> - ให้ตรงกับที่กำหนด</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>🎯 การใช้งานที่ดี</h3>
+            <ul>
+                <li><strong>เลือกใช้เฉพาะที่ต้องการ</strong> - ไม่จำเป็นต้องโหลดทั้งหมด</li>
+                <li><strong>ใช้ version tag</strong> - เพื่อ cache และ stability</li>
+                <li><strong>ทดสอบบน mobile</strong> - responsive design พร้อมใช้</li>
+            </ul>
+        </div>
+
+        <!-- Complete Example -->
+        <h2>📋 ตัวอย่างไฟล์ HTML สมบูรณ์</h2>
+        <div class="example-box">
+            <p><strong>สำหรับสร้างเว็บใหม่:</strong> คัดลอกโค้ดด้านล่างทั้งหมด</p>
+        </div>
+
+        <div class="code-section">
+            <button class="copy-btn" onclick="copyToClipboard('complete-example')">📋 Copy Full File</button>
+            <pre id="complete-example">&lt;!DOCTYPE html&gt;
+&lt;html lang="th"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Gold &amp; Silver Analytics&lt;/title&gt;
+    
+    &lt;!-- CSS Files --&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/style.css"&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/hero.css"&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/stats.css"&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/features.css"&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/cta.css"&gt;
+    &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/css/calculator.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- Components --&gt;
+    &lt;div id="hero"&gt;&lt;/div&gt;
+    &lt;div id="stats"&gt;&lt;/div&gt;
+    &lt;div id="features-container"&gt;&lt;/div&gt;
+    
+    &lt;section style="padding: 4rem 0; background: var(--bg-light);"&gt;
+        &lt;div class="container"&gt;
+            &lt;h2 class="section-title"&gt;คำนวณราคาทองคำและแท่งเงิน&lt;/h2&gt;
+            &lt;div id="calculator-app"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    
+    &lt;div id="cta"&gt;&lt;/div&gt;
+
+    &lt;!-- JavaScript Files --&gt;
+    &lt;script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/scripts/common.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/scripts/components.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v.1.0/scripts/calculator.js"&gt;&lt;/script&gt;
+    
+    &lt;script&gt;
+    document.addEventListener('DOMContentLoaded', function() {
+        if (document.getElementById('hero')) new GemApp.HeroSection('hero');
+        if (document.getElementById('stats')) new GemApp.StatsSection('stats');
+        if (document.getElementById('features-container')) new GemApp.FeaturesSection('features-container');
+        if (document.getElementById('calculator-app')) new GemApp.GoldSilverCalculator('calculator-app');
+        if (document.getElementById('cta')) new GemApp.CTASection('cta');
+        
+        console.log('🥇 GEM Analytics App Initialized Successfully!');
+    });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+        </div>
+
+        <hr style="margin: 3rem 0;">
+        <div style="text-align: center; color: #7f8c8d;">
+            <p><strong>💎 Gold & Silver Analytics CDN</strong></p>
+            <p>🚀 <strong>Ready to use - No setup required!</strong></p>
+            <p>📧 Support: <a href="mailto:support@example.com">support@example.com</a></p>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent;
+            
+            navigator.clipboard.writeText(text).then(function() {
+                // Show feedback
+                const button = event.target;
+                const originalText = button.textContent;
+                button.textContent = '✅ Copied!';
+                button.style.background = '#27ae60';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '#3498db';
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Could not copy text: ', err);
+                alert('การคัดลอกล้มเหลว กรุณาเลือกและคัดลอกด้วยตนเอง');
+            });
+        }
+    </script>
+</body>
+</html>

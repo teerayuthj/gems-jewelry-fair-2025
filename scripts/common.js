@@ -160,9 +160,11 @@ class ParallaxEffects {
 }
 
 // ====== Global App Initialization ======
-window.GemApp = {
-    Utils,
-    AnimationObserver,
-    SmoothScrollHandler,
-    ParallaxEffects
-};
+// Ensure GemApp namespace exists
+window.GemApp = window.GemApp || {};
+
+// Add utilities to GemApp namespace
+window.GemApp.Utils = Utils;
+window.GemApp.AnimationObserver = AnimationObserver;
+window.GemApp.SmoothScrollHandler = SmoothScrollHandler;
+window.GemApp.ParallaxEffects = ParallaxEffects;

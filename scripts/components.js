@@ -77,12 +77,14 @@ class StatsSection {
     }
 
     initAnimations() {
-        const animationObserver = new window.GemApp.AnimationObserver();
-        const statCards = this.container.querySelectorAll('.stat-card');
-        const statsSection = this.container.querySelector('.stats-section');
-        
-        animationObserver.observe(statCards);
-        animationObserver.observeStats(statsSection, [2000, 100, 20]);
+        if (window.GemApp && window.GemApp.AnimationObserver) {
+            const animationObserver = new window.GemApp.AnimationObserver();
+            const statCards = this.container.querySelectorAll('.stat-card');
+            const statsSection = this.container.querySelector('.stats-section');
+            
+            animationObserver.observe(statCards);
+            animationObserver.observeStats(statsSection, [2000, 100, 20]);
+        }
     }
 }
 
@@ -137,9 +139,11 @@ class FeaturesSection {
     }
 
     initAnimations() {
-        const animationObserver = new window.GemApp.AnimationObserver();
-        const featureBlocks = this.container.querySelectorAll('.feature-block');
-        animationObserver.observe(featureBlocks);
+        if (window.GemApp && window.GemApp.AnimationObserver) {
+            const animationObserver = new window.GemApp.AnimationObserver();
+            const featureBlocks = this.container.querySelectorAll('.feature-block');
+            animationObserver.observe(featureBlocks);
+        }
     }
 }
 
@@ -174,13 +178,18 @@ class CTASection {
     }
 
     initAnimations() {
-        const animationObserver = new window.GemApp.AnimationObserver();
-        const ctaSection = this.container.querySelector('.cta-section');
-        animationObserver.observe([ctaSection]);
+        if (window.GemApp && window.GemApp.AnimationObserver) {
+            const animationObserver = new window.GemApp.AnimationObserver();
+            const ctaSection = this.container.querySelector('.cta-section');
+            animationObserver.observe([ctaSection]);
+        }
     }
 }
 
 // Export to global scope
+// Ensure GemApp namespace exists
+window.GemApp = window.GemApp || {};
+
 window.GemApp.HeroSection = HeroSection;
 window.GemApp.StatsSection = StatsSection;
 window.GemApp.FeaturesSection = FeaturesSection;
