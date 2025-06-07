@@ -9,18 +9,28 @@
 </head>
 <body>
 <!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.03/css/realtime.css">
-
-<!-- HTML -->
-<div id="realtime-prices"></div>
-
-<!-- JavaScript -->
-<script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.03/scripts/realtime.js"></script>
+<script src="/scripts/gem-promotion-cdn.js"></script>
+<div id="promotion"></div>
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    new GemApp.RealtimePriceComponent('realtime-prices');
-});
+  GemPromotion.createFullPromotion('promotion', 'CODE123', 'ส่วนลด 30%', {
+    eventStart: '07/09/2025 10:00',     // วัน/เดือน/ปี ชั่วโมง:นาที
+    eventEnd: '13/09/2025 18:00',       // วัน/เดือน/ปี ชั่วโมง:นาที
+    title: 'งาน 72nd Bangkok Gems and Jewelry Fair 2025',
+    dateText: '7-13 กันยายน 2025'
+  });
 </script>
+
+<hr style="margin: 40px 0;">
+
+<div id="promotion-test"></div>
+<script>
+  GemPromotion.createFullPromotion('promotion-test', 'CODE1234', 'ส่วนลด 30%', {
+    eventStart: '07/06/2025 10:00',     // วัน/เดือน/ปี ชั่วโมง:นาที
+    eventEnd: '13/06/2025 18:00',       // วัน/เดือน/ปี ชั่วโมง:นาที
+    title: 'งาน 72nd Bangkok Gems and Jewelry Fair 2025',
+    dateText: '7-13 กันยายน 2025'
+  });
+</script>
+
 </body>
 </html>

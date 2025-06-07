@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold & Silver Analytics</title>
+</head>
+<body style="margin: 20px; font-family: Arial, sans-serif;">
+
+<h1>ทดสอบ 2 Promotion แยกกัน</h1>
+
+<!-- งานจริง - ยังไม่เริ่ม -->
+<h2>งานจริง (7-13 กันยายน 2025) - ยังไม่เริ่ม</h2>
+<script src="/scripts/gem-promotion-cdn.js"></script>
+<div id="promotion"></div>
+<script>
+  GemPromotion.createFullPromotion('promotion', 'CODE123', 'ส่วนลด 30%', {
+    eventStart: '07/09/2025 10:00',     // วัน/เดือน/ปี ชั่วโมง:นาที
+    eventEnd: '13/09/2025 18:00',       // วัน/เดือน/ปี ชั่วโมง:นาที
+    title: 'งาน 72nd Bangkok Gems and Jewelry Fair 2025',
+    dateText: '7-13 กันยายน 2025'
+  });
+</script>
+
+<hr style="margin: 40px 0;">
+
+<!-- งาน Demo - ใช้ได้ทันที -->
+<h2>งาน Demo (7-13 มิถุนายน 2025) - ใช้ได้ทันที</h2>
+<div id="promotion-test"></div>
+<script>
+  const now = new Date();
+  const demoStart = new Date(now.getTime() - 86400000);  // เริ่ม 1 วันที่แล้ว
+  const demoEnd = new Date(now.getTime() + 345600000);   // สิ้นสุดใน 4 วัน
+  
+  GemPromotion.createFullPromotion('promotion-test', 'DEMO1234', 'ส่วนลด 50% Demo!', {
+    eventStart: demoStart,
+    eventEnd: demoEnd,
+    title: 'งาน Demo ใช้ได้ทันที',
+    dateText: 'กำลังจัดงาน - เหลืออีก 4 วัน'
+  });
+</script>
+
+<hr style="margin: 40px 0;">
+
+<div style="padding: 20px; background: #f0f8ff; border: 1px solid #b3d9ff; border-radius: 8px;">
+    <h3>ผลลัพธ์ที่คาดหวัง:</h3>
+    <p><strong>งานจริง:</strong> นับถอยหลังจนเริ่มงาน + รหัส ••••••••  (คัดลอกไม่ได้)</p>
+    <p><strong>งาน Demo:</strong> "⏰ โปรโมชั่นกำลังใช้งานได้!" + รหัสจริง (คัดลอกได้)</p>
+</div>
+
+</body>
+</html>

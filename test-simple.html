@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ทดสอบ Gem Promotion</title>
+</head>
+<body style="margin: 20px; font-family: Arial, sans-serif;">
+    
+    <h1>ทดสอบ Gem Promotion Component</h1>
+    
+    <!-- แก้ให้ตรงกัน: id="promotion" กับ containerId ใน JavaScript -->
+    <script src="/scripts/gem-promotion-cdn.js"></script>
+    <div id="promotion"></div>
+    <script>
+      GemPromotion.createFullPromotion('promotion', 'CODE123', 'ส่วนลด 30%', {
+        eventStart: '07/06/2025 10:00',     // วัน/เดือน/ปี ชั่วโมง:นาที
+        eventEnd: '13/06/2025 18:00',       // วัน/เดือน/ปี ชั่วโมง:นาที
+        title: 'งาน 72nd Bangkok Gems and Jewelry Fair 2025',
+        dateText: '7-13 มิถุนายน 2025'
+      });
+    </script>
+    
+    <hr style="margin: 40px 0;">
+    
+    <!-- ทดสอบแบบใช้ได้ทันที (วันงานจริง) -->
+    <h2>ทดสอบแบบใช้ได้ทันที (วันงานจริง)</h2>
+    <div id="test-active"></div>
+    <script>
+      // จำลองการใช้งานในวันงานจริง (9-13 กันยายน 2025)
+      GemPromotion.createFullPromotion('test-active', 'GEMS2025', 'ส่วนลด 25% สำหรับงานจริง!', {
+        eventStart: '9/9/2025 09:00',      // วันที่ 9 กันยายน 2025 เวลา 09:00
+        eventEnd: '13/9/2025 18:00',       // วันที่ 13 กันยายน 2025 เวลา 18:00  
+        title: '72nd Bangkok Gems and Jewelry Fair',
+        dateText: '9-13 กันยายน 2025'
+      });
+    </script>
+    
+    <hr style="margin: 40px 0;">
+    
+    <!-- ทดสอบให้ใช้ได้ทันทีจริงๆ (สำหรับดูการทำงาน) -->
+    <h2>ทดสอบให้ใช้ได้ทันทีจริงๆ (Demo)</h2>
+    <div id="demo-active"></div>
+    <script>
+      const now = new Date();
+      GemPromotion.createFullPromotion('demo-active', 'DEMO50', 'ใช้ได้เลยตอนนี้ 50%!', {
+        eventStart: new Date(now.getTime() - 60000),     // เริ่ม 1 นาทีที่แล้ว
+        eventEnd: new Date(now.getTime() + 1800000),     // สิ้นสุดใน 30 นาที
+        title: 'Demo โปรโมชั่นแบบใช้ได้ทันที',
+        dateText: 'ตอนนี้ - 30 นาทีข้างหน้า'
+      });
+    </script>
+    
+    <hr style="margin: 40px 0;">
+    
+    <!-- ทดสอบเฉพาะ Discount Code -->
+    <h2>ทดสอบเฉพาะรหัสส่วนลด</h2>
+    <div id="discount-test"></div>
+    <script>
+      // กำหนดวันที่เอง แล้วสร้าง discount section
+      GemPromotion.setEventDates('07/06/2025 10:00', '13/06/2025 18:00');
+      GemPromotion.createDiscountSection('discount-test', 'SPECIAL20', 'ส่วนลดพิเศษ 20%');
+    </script>
+
+</body>
+</html>

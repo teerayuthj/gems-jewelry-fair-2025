@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangkok Gems and Jewelry Fair 2025 - Promotion Examples</title>
+</head>
+<body style="margin: 0; padding: 20px; background: #f5f5f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+    
+    <div style="max-width: 800px; margin: 0 auto;">
+        <h1 style="text-align: center; color: #002458; margin-bottom: 40px;">
+            Bangkok Gems and Jewelry Fair 2025 - Promotion Components
+        </h1>
+        
+        <!-- Full Promotion Component -->
+        <h2 style="color: #002458;">Full Promotion Component</h2>
+        <div id="full-promotion"></div>
+        
+        <!-- Countdown Only Section -->
+        <h2 style="color: #002458; margin-top: 40px;">Countdown Only Section</h2>
+        <div id="countdown-only"></div>
+        
+        <!-- Discount Code Only Section -->
+        <h2 style="color: #002458; margin-top: 40px;">Discount Code Only Section</h2>
+        <div id="discount-only"></div>
+        
+        <!-- Test with Custom Dates -->
+        <h2 style="color: #002458; margin-top: 40px;">ทดสอบกับวันที่กำหนดเอง</h2>
+        <div id="test-promotion"></div>
+        
+        <!-- Usage Instructions -->
+        <div style="margin-top: 60px; padding: 20px; background: white; border: 1px solid #e0e0e0; border-radius: 8px;">
+            <h3 style="color: #002458; margin-top: 0;">วิธีการใช้งาน</h3>
+            
+            <h4>1. เรียกใช้ผ่าน CDN:</h4>
+            <pre style="background: #f8f9fa; padding: 15px; border-radius: 6px; overflow-x: auto;">
+&lt;script src="path/to/gem-promotion-cdn.js"&gt;&lt;/script&gt;</pre>
+            
+            <h4>2. สร้าง Full Promotion (ปกติ):</h4>
+            <pre style="background: #f8f9fa; padding: 15px; border-radius: 6px; overflow-x: auto;">
+&lt;div id="my-promotion"&gt;&lt;/div&gt;
+&lt;script&gt;
+  GemPromotion.createFullPromotion('my-promotion', 'GEMS2025', 'ส่วนลด 20%');
+&lt;/script&gt;</pre>
+            
+            <h4>3. กำหนดวันที่เอง (สำหรับทดสอบ):</h4>
+            <pre style="background: #f8f9fa; padding: 15px; border-radius: 6px; overflow-x: auto;">
+&lt;div id="test-promotion"&gt;&lt;/div&gt;
+&lt;script&gt;
+  GemPromotion.createFullPromotion('test-promotion', 'TEST2024', 'ส่วนลดทดสอบ 50%', {
+    eventStart: '7/12/2024 10:00',   // วัน/เดือน/ปี ชั่วโมง:นาที
+    eventEnd: '8/12/2024 18:00',     // วัน/เดือน/ปี ชั่วโมง:นาที
+    title: 'งานทดสอบโปรโมชั่น',
+    dateText: '7-8 ธันวาคม 2024'
+  });
+&lt;/script&gt;</pre>
+            
+            <h4>4. รูปแบบวันที่ที่รองรับ:</h4>
+            <pre style="background: #f8f9fa; padding: 15px; border-radius: 6px; overflow-x: auto;">
+// รูปแบบที่ใช้ได้:
+'7/12/2024'          // วัน/เดือน/ปี (เวลา 00:00)
+'7/12/2024 14:30'    // วัน/เดือน/ปี ชั่วโมง:นาที
+'2024-12-07'         // ปี-เดือน-วัน (เวลา 00:00)
+'2024-12-07 14:30'   // ปี-เดือน-วัน ชั่วโมง:นาที</pre>
+            
+            <h4>5. ตัวอย่างการทดสอบในปัจจุบัน:</h4>
+            <pre style="background: #f8f9fa; padding: 15px; border-radius: 6px; overflow-x: auto;">
+// ทดสอบให้โปรโมชั่นเปิดใช้งานได้ทันที
+const now = new Date();
+const start = new Date(now.getTime() - 60000); // เริ่ม 1 นาทีที่แล้ว
+const end = new Date(now.getTime() + 3600000);  // สิ้นสุดใน 1 ชั่วโมง
+
+GemPromotion.createFullPromotion('test', 'ACTIVE', 'ใช้ได้เลย!', {
+  eventStart: start,
+  eventEnd: end
+});</pre>
+            
+            <h4>คุณสมบัติ:</h4>
+            <ul>
+                <li>นับถอยหลังไปยังวันงานที่กำหนด</li>
+                <li>รหัสส่วนลดซ่อนก่อนวันงาน แสดงเป็น ••••••••</li>
+                <li>คัดลอกได้เฉพาะช่วงวันงาน</li>
+                <li>กำหนดวันที่เอง สำหรับทดสอบ</li>
+                <li>Responsive design ใช้งานได้บนมือถือ</li>
+                <li>ไม่ต้องการ CSS เพิ่มเติม</li>
+                <li>Theme สีขาวกับสี #002458</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Load the CDN component -->
+    <script src="gem-promotion-cdn.js"></script>
+    
+    <!-- Initialize components -->
+    <script>
+        // Full promotion with countdown and discount code
+        GemPromotion.createFullPromotion('full-promotion', 'GEMS2025', 'ส่วนลด 20% สำหรับสินค้าทุกชิ้น');
+        
+        // Countdown only
+        GemPromotion.createCountdownSection('countdown-only');
+        
+        // Discount code only
+        GemPromotion.createDiscountSection('discount-only', 'JEWELRY20', 'ส่วนลดพิเศษ 15%');
+        
+        // Test promotion with custom dates (active now for testing)
+        const now = new Date();
+        const testStart = new Date(now.getTime() - 60000);    // เริ่ม 1 นาทีที่แล้ว
+        const testEnd = new Date(now.getTime() + 3600000);    // สิ้นสุดใน 1 ชั่วโมง
+        
+        GemPromotion.createFullPromotion('test-promotion', 'TEST2024', 'ส่วนลดทดสอบ 50%', {
+            eventStart: testStart,
+            eventEnd: testEnd,
+            title: 'งานทดสอบโปรโมชั่น',
+            dateText: 'ทดสอบวันนี้ (ใช้ได้ 1 ชั่วโมง)'
+        });
+    </script>
+</body>
+</html>
