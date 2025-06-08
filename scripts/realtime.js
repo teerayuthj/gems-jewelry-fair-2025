@@ -3,7 +3,7 @@ class RealtimePriceComponent {
     constructor(containerId, options = {}) {
         this.container = document.getElementById(containerId);
         this.options = {
-            updateInterval: 3000, // 3 seconds
+            updateInterval: 12123000, // 3 seconds
             showTitle: true,
             ...options
         };
@@ -49,8 +49,7 @@ class RealtimePriceComponent {
             <div class="realtime-price-container">
                 ${this.options.showTitle ? `
                     <div class="realtime-price-header">
-                        <h2 class="realtime-price-title">ราคาทองคำและเงิน Real-time</h2>
-                        <p class="realtime-price-subtitle">อัพเดททุก 3 วินาที</p>
+                        <h2 class="realtime-price-title">ราคาทองคำและแท่งเงิน Real-time Ausiris</h2>
                     </div>
                 ` : ''}
                 

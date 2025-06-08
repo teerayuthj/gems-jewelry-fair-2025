@@ -16,6 +16,7 @@
     margin-bottom: 1.5rem !important;
     padding-bottom: 1rem !important;
     border-bottom: 1px solid #e0e0e0 !important;
+    font-family: 'Prompt', sans-serif;
 }
 
 .realtime-price-title {
@@ -24,12 +25,14 @@
     color: #002458 !important;
     margin: 0 !important;
     padding: 0 !important;
+    font-family: 'Prompt', sans-serif;
 }
 
 .realtime-price-subtitle {
     font-size: 1.2rem !important;
     color: #666666 !important;
     margin: 0.5rem 0 0 0 !important;
+    font-family: 'Prompt', sans-serif;
 }
 
 .realtime-price-grid {
@@ -37,6 +40,7 @@
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 1rem !important;
     margin-bottom: 1rem !important;
+    font-family: 'Prompt', sans-serif;
 }
 
 .realtime-price-card {
@@ -45,6 +49,7 @@
     border-radius: 6px !important;
     padding: 1rem !important;
     transition: all 0.2s ease !important;
+
 }
 
 .realtime-price-card.price-up {
@@ -77,7 +82,7 @@
 }
 
 .price-card-title {
-    font-size: 1.4rem !important;
+    font-size: 1.6rem !important;
     font-weight: 600 !important;
     color: #002458 !important;
     margin: 0 !important;
@@ -96,6 +101,8 @@
     display: grid !important;
     grid-template-columns: 1fr 1fr 1fr !important;
     gap: 0.75rem !important;
+    padding: 20px 0px;
+    font-family: 'Prompt', sans-serif;
 }
 
 .price-value {
@@ -103,24 +110,27 @@
 }
 
 .price-label {
-    font-size: 1rem !important;
+    font-size: 1.2rem !important;
     color: #666666 !important;
     margin-bottom: 0.25rem !important;
     text-transform: uppercase !important;
     font-weight: 500 !important;
+    font-family: 'Prompt', sans-serif;
 }
 
 .price-amount {
-    font-size: 1.5rem !important;
+    font-size: 2rem !important;
     font-weight: 700 !important;
     color: #002458 !important;
     margin: 0 !important;
+    font-family: 'Prompt', sans-serif;
 }
 
 .price-change {
-    font-size: 1.3rem !important;
+    font-size: 2rem !important;
     font-weight: 600 !important;
     margin: 0 !important;
+    font-family: 'Prompt', sans-serif;
 }
 
 .price-change.positive {
@@ -163,13 +173,13 @@
 }
 
 .last-updated {
-    font-size: 1.1rem !important;
-    color: #666666 !important;
-    margin: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 0.5rem !important;
+    font-size: 1.1rem ;
+    color: #666666;
+    margin: 0;
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .status-indicator {
@@ -217,7 +227,7 @@
     }
     
     .price-label {
-        font-size: 1.1rem !important;
+        font-size: 1.3rem !important;
     }
     
     .price-values {
@@ -254,14 +264,29 @@
     }
     
     .price-label {
-        font-size: 1rem !important;
+        font-size: 1.3rem !important;
     }
     
     .price-amount {
-        font-size: 1.5rem !important;
+        font-size: 1.6rem !important;
     }
     
     .price-change {
-        font-size: 1.3rem !important;
+        font-size: 1.6rem !important;
     }
+}
+
+.container {
+    max-width: 1370px !important;
+}
+
+img {
+    max-width: 100% none;
+    height: auto none;
+    border-style: none;
+}
+
+#header.gold .menu-list {
+    float: left;
+    margin: 10px 0 0 30px !important;
 }
