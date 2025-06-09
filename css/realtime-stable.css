@@ -25,7 +25,7 @@
 }
 
 .current-datetime {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 500;
     color: #6b7280;
     text-align: center;
@@ -105,7 +105,7 @@
 }
 
 .price-card-title {
-    font-size: 1.2rem;
+    font-size: 2rem !important;
     font-weight: 600;
     color: #1f2937;
     margin: 0;
@@ -266,7 +266,7 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
-    font-size: 0.9rem;
+    font-size: 1.2rem !important;
     color: #6b7280;
 }
 
@@ -318,7 +318,7 @@
     }
     
     .price-card-title {
-        font-size: 1.1rem;
+        font-size: 1.7rem !important;
     }
     
     .price-amount {
@@ -350,7 +350,7 @@
     }
     
     .price-card-title {
-        font-size: 1rem;
+        font-size: 1.5rem !important;
     }
     
     .price-amount {

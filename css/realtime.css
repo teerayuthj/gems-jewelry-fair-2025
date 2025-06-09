@@ -89,7 +89,7 @@
 }
 
 .price-card-type {
-    font-size: 1rem !important;
+    font-size: 1.2rem !important;
     color: #666666 !important;
     background: #f8f9fa !important;
     padding: 0.25rem 0.5rem !important;
@@ -219,7 +219,7 @@
     }
     
     .realtime-price-title {
-        font-size: 2rem !important;
+        font-size: 2.7rem !important;
     }
     
     .price-card-title {
@@ -256,7 +256,7 @@
     }
     
     .realtime-price-title {
-        font-size: 1.8rem !important;
+        font-size: 2.5rem !important;
     }
     
     .price-card-title {
