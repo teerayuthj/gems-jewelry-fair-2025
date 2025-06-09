@@ -7,8 +7,7 @@
     background: #ffffff !important;
     border: 1px solid #e0e0e0 !important;
     border-radius: 8px !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-family: 'Prompt', sans-serif;
 }
 
 .realtime-price-header {
@@ -20,7 +19,7 @@
 }
 
 .realtime-price-title {
-    font-size: 2.2rem !important;
+    font-size: 2.5rem !important;
     font-weight: 600 !important;
     color: #002458 !important;
     margin: 0 !important;
@@ -86,6 +85,7 @@
     font-weight: 600 !important;
     color: #002458 !important;
     margin: 0 !important;
+    font-family: 'Prompt', sans-serif;
 }
 
 .price-card-type {
@@ -282,7 +282,7 @@
 
 img {
     max-width: 100% none;
-    height: auto none;
+    height: revert-layer !important;
     border-style: none;
 }
 

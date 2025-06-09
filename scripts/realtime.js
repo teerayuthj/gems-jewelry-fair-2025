@@ -3,7 +3,7 @@ class RealtimePriceComponent {
     constructor(containerId, options = {}) {
         this.container = document.getElementById(containerId);
         this.options = {
-            updateInterval: 12123000, // 3 seconds
+            updateInterval: 3000, // 3 seconds
             showTitle: true,
             ...options
         };

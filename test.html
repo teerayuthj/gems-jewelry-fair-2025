@@ -8,8 +8,22 @@
     
 </head>
 <body>
+
+  <script src="/scripts/gem-banner-cdn.js"></script>
+<div id="hero-banner"></div>
+<script>
+  GemBanner.createHeroBanner('hero-banner', {
+    title: 'Ausiris Gold & Silver Manufacturer & Investment Trader',
+    subtitle: 'ผู้ผลิตและจัดจำหน่ายทองคำแท่งและเงินแท่งคุณภาพสูง',
+    description: 'ราคาทองคำตามราคาตลาดโลก พร้อมบริการรับซื้อคืนทุกน้ำหนัก รับประกันความบริสุทธิ์ 99.99%, 96.5% และ โลหะเงินบริสุทธิ์ 99.99%',
+    primaryButton: { text: 'ทองคำแท่งของเรา', url: '#register' },
+    secondaryButton: { text: 'ติดต่อเรา', url: '#details' },
+    desktopImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop',
+    mobileImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=800&fit=crop'
+  });
+</script>
 <!-- CSS -->
-<script src="/scripts/gem-promotion-cdn.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.07/scripts/gem-promotion-cdn.js"></script>
 <div id="promotion"></div>
 <script>
   GemPromotion.createFullPromotion('promotion', 'CODE123', 'ส่วนลด 30%', {
@@ -19,6 +33,7 @@
     dateText: '7-13 กันยายน 2025'
   });
 </script>
+
 
 <hr style="margin: 40px 0;">
 
@@ -32,5 +47,48 @@
   });
 </script>
 
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.07/css/realtime.css">
+
+<!-- HTML -->
+<div id="realtime-prices"></div>
+
+<!-- JavaScript -->
+<script src="/scripts/realtime.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    new GemApp.RealtimePriceComponent('realtime-prices');
+});
+</script>
+
+
+
+<!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.07/css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.07/css/calculator.css">
+
+<!-- HTML -->
+<div id="calculator-app"></div>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.07/scripts/common.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.07/scripts/calculator.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    new GemApp.GoldSilverCalculator('calculator-app');
+});
+</script>
+
+<div style="display: flex; justify-content: center; width: 100%; margin: 0 auto;">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1937.9195656620043!2d100.5345192!3d13.7281875!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f2b54d9be83%3A0x569f8e5d59bad888!2sAusiris%20Company%20Limited!5e0!3m2!1sen!2sth!4v1749353588121!5m2!1sen!2sth" 
+          width="600" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
 </body>
 </html>

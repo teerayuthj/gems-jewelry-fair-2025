@@ -50,7 +50,7 @@ class GoldSilverCalculator {
     render() {
         this.container.innerHTML = `
             <div class="calculator-container">
-                <h1 class="calculator-title">เครื่องคำนวณราคาทองคำและเงินไทย</h1>
+                <h1 class="calculator-title">คำนวณราคาทองคำและแท่งเงิน</h1>
                 
                 <div class="metal-selector">
                     <div class="selector-bg gold" id="selectorBg"></div>
