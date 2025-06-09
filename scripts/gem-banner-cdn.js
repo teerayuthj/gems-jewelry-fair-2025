@@ -26,8 +26,8 @@
         title: 'Ausiris Gold & Silver',
         subtitle: 'ผู้ผลิตและจัดจำหน่ายทองคำแท่งและเงินแท่งคุณภาพสูง',
         description: 'ราคาทองคำตามราคาตลาดโลก พร้อมบริการรับซื้อคืนทุกน้ำหนัก',
-        primaryButton: { text: 'ทองคำแท่งของเรา', url: '#' },
-        secondaryButton: { text: 'ติดต่อเรา', url: '#' },
+        primaryButton: { text: 'ทองคำแท่งของเรา', url: 'http://www.ausiris.co.th/content/index/products/information-products.html' },
+        secondaryButton: { text: 'ติดต่อเรา', url: 'https://page.line.me/lgy9487c?openQrModal=true' },
         desktopImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop&auto=format',
         mobileImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=800&fit=crop&auto=format',
         overlayColor: 'rgba(0, 36, 88, 0.5)',
@@ -83,6 +83,14 @@
             background-position: center;
             background-repeat: no-repeat;
             transition: all 0.3s ease;
+            border-radius: inherit;
+        }
+        
+        /* Mobile - เอา border-radius ออกจาก background */
+        @media (max-width: 768px) {
+            .gem-banner.full-width .gem-banner-background {
+                border-radius: 0;
+            }
         }
 
         .gem-banner-overlay {
@@ -131,7 +139,7 @@
         }
 
         .gem-banner-subtitle {
-            font-size: 1.4rem;
+            font-size: 1.4rem !important;
             font-weight: 500;
             margin-bottom: 12px;
             opacity: 0.95;
@@ -155,7 +163,7 @@
             text-decoration: none;
             border-radius: 8px;
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 1.5rem !important;
             transition: all 0.3s ease;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             border: none;
@@ -193,17 +201,17 @@
         }
 
         .gem-hero-banner .gem-banner-title {
-            font-size: 3rem;
+            font-size: 3rem !important;
             margin-bottom: 20px;
         }
 
         .gem-hero-banner .gem-banner-subtitle {
-            font-size: 1.6rem;
+            font-size: 2.6rem !important;
             margin-bottom: 16px;
         }
 
         .gem-hero-banner .gem-banner-description {
-            font-size: 1.2rem;
+            font-size: 1.7rem !important;
             margin-bottom: 32px;
         }
 
@@ -236,7 +244,7 @@
 
             .gem-banner-button {
                 padding: 12px 24px;
-                font-size: 0.9rem;
+                font-size: 1.2rem !important;
                 margin-right: 8px;
                 margin-bottom: 8px;
             }
