@@ -31,7 +31,10 @@
         desktopImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop&auto=format',
         mobileImage: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=800&fit=crop&auto=format',
         overlayColor: 'rgba(0, 36, 88, 0.5)',
-        contentPosition: 'center'
+        contentPosition: 'center',
+        fullWidth: false,
+        showText: true,
+        showButton: true
     };
 
     // CSS Styles
@@ -44,6 +47,30 @@
             overflow: hidden;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 12px;
+        }
+
+        .gem-banner.full-width {
+            border-radius: 0;
+        }
+        
+        /* Desktop - ไม่เต็มจอ */
+        @media (min-width: 769px) {
+            .gem-banner.full-width {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+        
+        /* Mobile - เต็มจอ */
+        @media (max-width: 768px) {
+            .gem-banner.full-width {
+                width: 100vw;
+                margin-left: calc(-50vw + 50%);
+                margin-right: 0;
+                border-radius: 0;
+            }
         }
 
         .gem-banner-background {
@@ -303,17 +330,32 @@
 
         const imageUrl = getResponsiveImage(config);
         
+        const bannerClass = config.fullWidth ? 'gem-banner full-width' : 'gem-banner';
+        const contentClass = config.showText === false ? 'gem-banner-content no-text' : `gem-banner-content ${config.contentPosition}`;
+        const imageOnlyClass = config.showText === false && config.showButton === false ? ' image-only' : '';
+        
+        let contentHTML = '';
+        if (config.showText !== false || config.showButton !== false) {
+            contentHTML = `
+                <div class="${contentClass}">
+                    ${config.showText !== false ? `
+                        <h2 class="gem-banner-title">${config.title}</h2>
+                        <p class="gem-banner-description">${config.description}</p>
+                    ` : ''}
+                    ${config.showButton !== false ? `
+                        <a href="${config.buttonUrl}" class="gem-banner-button" style="background: ${config.buttonColor}">
+                            ${config.buttonText}
+                        </a>
+                    ` : ''}
+                </div>
+            `;
+        }
+        
         container.innerHTML = `
-            <div class="gem-banner">
+            <div class="${bannerClass}${imageOnlyClass}">
                 <div class="gem-banner-background" style="background-image: url('${imageUrl}')"></div>
                 <div class="gem-banner-overlay" style="background: ${config.overlayColor}"></div>
-                <div class="gem-banner-content ${config.contentPosition}">
-                    <h2 class="gem-banner-title">${config.title}</h2>
-                    <p class="gem-banner-description">${config.description}</p>
-                    <a href="${config.buttonUrl}" class="gem-banner-button" style="background: ${config.buttonColor}">
-                        ${config.buttonText}
-                    </a>
-                </div>
+                ${contentHTML}
             </div>
         `;
 
@@ -345,23 +387,36 @@
 
         const imageUrl = getResponsiveImage(config);
         
-        const buttonsHTML = `
-            <div class="gem-banner-buttons">
-                ${config.primaryButton ? `<a href="${config.primaryButton.url}" class="gem-banner-button">${config.primaryButton.text}</a>` : ''}
-                ${config.secondaryButton ? `<a href="${config.secondaryButton.url}" class="gem-banner-button secondary">${config.secondaryButton.text}</a>` : ''}
-            </div>
-        `;
+        const bannerClass = config.fullWidth ? 'gem-banner gem-hero-banner full-width' : 'gem-banner gem-hero-banner';
+        const contentClass = config.showText === false ? 'gem-banner-content no-text' : `gem-banner-content ${config.contentPosition}`;
+        const imageOnlyClass = config.showText === false && config.showButton === false ? ' image-only' : '';
         
-        container.innerHTML = `
-            <div class="gem-banner gem-hero-banner">
-                <div class="gem-banner-background" style="background-image: url('${imageUrl}')"></div>
-                <div class="gem-banner-overlay" style="background: ${config.overlayColor}"></div>
-                <div class="gem-banner-content ${config.contentPosition}">
-                    <h1 class="gem-banner-title">${config.title}</h1>
-                    ${config.subtitle ? `<h2 class="gem-banner-subtitle">${config.subtitle}</h2>` : ''}
-                    <p class="gem-banner-description">${config.description}</p>
+        let contentHTML = '';
+        if (config.showText !== false || config.showButton !== false) {
+            const buttonsHTML = config.showButton !== false ? `
+                <div class="gem-banner-buttons">
+                    ${config.primaryButton ? `<a href="${config.primaryButton.url}" class="gem-banner-button">${config.primaryButton.text}</a>` : ''}
+                    ${config.secondaryButton ? `<a href="${config.secondaryButton.url}" class="gem-banner-button secondary">${config.secondaryButton.text}</a>` : ''}
+                </div>
+            ` : '';
+            
+            contentHTML = `
+                <div class="${contentClass}">
+                    ${config.showText !== false ? `
+                        <h1 class="gem-banner-title">${config.title}</h1>
+                        ${config.subtitle ? `<h2 class="gem-banner-subtitle">${config.subtitle}</h2>` : ''}
+                        <p class="gem-banner-description">${config.description}</p>
+                    ` : ''}
                     ${buttonsHTML}
                 </div>
+            `;
+        }
+        
+        container.innerHTML = `
+            <div class="${bannerClass}${imageOnlyClass}">
+                <div class="gem-banner-background" style="background-image: url('${imageUrl}')"></div>
+                <div class="gem-banner-overlay" style="background: ${config.overlayColor}"></div>
+                ${contentHTML}
             </div>
         `;
 

@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <script src="/scripts/gem-banner-cdn.js"></script>
+<script src="/scripts/gem-banner-cdn.js"></script>
 <div id="hero-banner"></div>
 <script>
   GemBanner.createHeroBanner('hero-banner', {
@@ -23,7 +23,7 @@
   });
 </script>
 <!-- CSS -->
-<script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.07/scripts/gem-promotion-cdn.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.08/scripts/gem-promotion-cdn.js"></script>
 <div id="promotion"></div>
 <script>
   GemPromotion.createFullPromotion('promotion', 'CODE123', 'ส่วนลด 30%', {
@@ -49,13 +49,13 @@
 
 <!-- CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.07/css/realtime.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.08/css/realtime.css">
 
 <!-- HTML -->
 <div id="realtime-prices"></div>
 
 <!-- JavaScript -->
-<script src="/scripts/realtime.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.08/scripts/realtime.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     new GemApp.RealtimePriceComponent('realtime-prices');
@@ -65,19 +65,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 <!-- CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.07/css/style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.07/css/calculator.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.08/css/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.08/css/calculator.css">
 
 <!-- HTML -->
 <div id="calculator-app"></div>
 
 <!-- JavaScript -->
-<script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.07/scripts/common.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.07/scripts/calculator.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.08/scripts/common.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.08/scripts/calculator.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     new GemApp.GoldSilverCalculator('calculator-app');
 });
+</script>
+
+<div id="jewelry-banner"></div>
+<script>
+  GemBanner.createBanner('jewelry-banner', {
+    desktopImage: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1200&h=400&fit=crop',
+    mobileImage: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&h=600&fit=crop',
+    overlayColor: 'rgba(0, 0, 0, 0.2)',
+    fullWidth: true,     // Desktop ปกติ, Mobile เต็มจอ
+    showText: false,     // ไม่แสดงข้อความ
+    showButton: false    // ไม่แสดงปุ่ม
+  });
 </script>
 
 <div style="display: flex; justify-content: center; width: 100%; margin: 0 auto;">
