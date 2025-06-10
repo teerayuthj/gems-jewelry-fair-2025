@@ -266,31 +266,129 @@
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
                 max-width: 600px;
                 margin: 0 auto;
+                padding: 0 16px;
                 background: white;
                 color: #333;
             }
             
             .gem-section {
-                border: 1px solid #e0e0e0;
-                border-radius: 8px;
-                padding: 24px;
-                margin: 16px 0;
-                background: white;
+                border: none;
+                border-radius: 12px;
+                padding: 28px;
+                margin: 20px 0;
+                background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .gem-section::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(135deg, #002458 0%, #3b82f6 100%);
+                border-radius: 12px;
+                padding: 2px;
+                z-index: -1;
+            }
+            
+            .gem-section::after {
+                content: '';
+                position: absolute;
+                top: 2px;
+                left: 2px;
+                right: 2px;
+                bottom: 2px;
+                background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+                border-radius: 10px;
+                z-index: -1;
+            }
+            
+            .gem-section:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
             }
             
             .gem-section-title {
-                margin: 0 0 16px 0;
-                font-size: 20px;
-                font-weight: 600;
-                color: #002458;
+                margin: 0 0 20px 0;
+                font-size: 24px;
+                font-weight: 700;
+                color: #002458 !important;
                 text-align: center;
+                position: relative;
+                padding: 8px 0;
+                text-shadow: 0 1px 2px rgba(0, 36, 88, 0.1);
+            }
+            
+            .gem-section-title::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: linear-gradient(90deg, transparent 0%, #002458 20%, #3b82f6 50%, #002458 80%, transparent 100%);
+                transform: translateY(-50%);
+                opacity: 0.3;
+                z-index: -1;
+            }
+            
+            .gem-section-title::after {
+                content: '✨';
+                position: absolute;
+                top: -5px;
+                right: -10px;
+                font-size: 16px;
+                animation: gem-sparkle 2s ease-in-out infinite;
+            }
+            
+            
+            @keyframes gem-sparkle {
+                0%, 100% { 
+                    transform: scale(1) rotate(0deg);
+                    opacity: 0.7;
+                }
+                50% { 
+                    transform: scale(1.2) rotate(180deg);
+                    opacity: 1;
+                }
             }
             
             .gem-event-date {
                 text-align: center;
+                font-size: 18px;
+                font-weight: 600;
+                color: #002458 !important;
+                margin: 0 0 24px 0;
+                background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+                padding: 12px 24px;
+                border-radius: 20px;
+                display: inline-block;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                border: 2px solid rgba(0, 36, 88, 0.1);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .gem-event-date::before {
+                content: '📅';
+                margin-right: 8px;
                 font-size: 16px;
-                color: #666;
-                margin: 0 0 20px 0;
+            }
+            
+            .gem-event-date::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 2px;
+                background: linear-gradient(90deg, transparent, #002458, #3b82f6, transparent);
+                border-radius: 20px 20px 0 0;
             }
             
             .gem-countdown-grid {
@@ -301,10 +399,31 @@
             }
             
             .gem-time-unit {
-                padding: 16px 8px;
-                border: 1px solid #e0e0e0;
-                border-radius: 6px;
-                background: #fafafa;
+                padding: 18px 12px;
+                border: none;
+                border-radius: 12px;
+                background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 36, 88, 0.1);
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .gem-time-unit::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 20%;
+                right: 20%;
+                height: 3px;
+                background: linear-gradient(90deg, transparent, #002458, #3b82f6, transparent);
+                border-radius: 0 0 6px 6px;
+                opacity: 0.6;
+            }
+            
+            .gem-time-unit:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(59, 130, 246, 0.3);
             }
             
             .gem-time-value {
@@ -316,7 +435,7 @@
             
             .gem-time-label {
                 font-size: 14px;
-                color: #666;
+                color: #666666 !important;
             }
             
             .gem-countdown-ended {
@@ -345,16 +464,20 @@
             
             .gem-countdown-subtitle {
                 font-size: 16px;
-                color: #666;
+                color: #666666 !important;
                 margin-bottom: 16px;
                 font-weight: 500;
             }
             
             .gem-time-ending {
                 background: linear-gradient(135deg, #fff3cd, #ffeaa7);
-                border: 2px solid #ffc107;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05), 0 0 0 2px #ffc107;
                 animation: gem-glow 4s ease-in-out infinite;
                 transition: all 0.3s ease;
+            }
+            
+            .gem-time-ending::before {
+                display: none;
             }
             
             .gem-time-ending .gem-time-value {
@@ -393,10 +516,31 @@
             
             .gem-discount-card {
                 text-align: center;
-                padding: 20px;
-                border: 1px solid #e0e0e0;
-                border-radius: 6px;
-                background: #fafafa;
+                padding: 24px;
+                border: 2px solid #e0e0e0;
+                border-radius: 12px;
+                background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+                transition: all 0.3s ease;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .gem-discount-card::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: linear-gradient(90deg, #002458, #3b82f6, #002458);
+                border-radius: 12px 12px 0 0;
+            }
+            
+            .gem-discount-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+                border-color: #3b82f6;
             }
             
             .gem-discount-code {
@@ -410,28 +554,47 @@
             
             .gem-discount-text {
                 font-size: 16px;
-                color: #666;
+                color: #666666 !important;
                 margin-bottom: 20px;
             }
             
             .gem-copy-button {
-                padding: 12px 24px;
+                padding: 14px 28px;
                 border: none;
-                border-radius: 6px;
+                border-radius: 8px;
                 font-size: 16px;
                 font-weight: 600;
                 cursor: pointer;
                 transition: all 0.3s ease;
                 color: white;
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .gem-copy-button::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+                transition: left 0.5s ease;
+            }
+            
+            .gem-copy-button:hover::before {
+                left: 100%;
             }
             
             .gem-copy-active {
-                background-color: #002458;
+                background: linear-gradient(135deg, #002458 0%, #1e3a8a 100%);
+                box-shadow: 0 4px 12px rgba(0, 36, 88, 0.3);
             }
             
             .gem-copy-active:hover {
-                background-color: #003875;
-                transform: translateY(-1px);
+                background: linear-gradient(135deg, #003875 0%, #1e40af 100%);
+                transform: translateY(-2px);
+                box-shadow: 0 6px 16px rgba(0, 36, 88, 0.4);
             }
             
             .gem-copy-disabled {
@@ -453,12 +616,16 @@
             
             .gem-unlock-hint {
                 font-size: 14px;
-                color: #999;
+                color: #999999 !important;
                 margin: 8px 0;
                 font-weight: 500;
             }
             
             @media (max-width: 480px) {
+                .gem-promotion-container {
+                    padding: 0 12px;
+                }
+                
                 .gem-countdown-grid {
                     grid-template-columns: repeat(2, 1fr);
                     gap: 12px;
