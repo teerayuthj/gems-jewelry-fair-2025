@@ -192,10 +192,11 @@ body {
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    font-size: 14px;
+    font-size: 16px;
     background: #fafafa;
     color: #2c3e50;
     font-weight: 500;
+    font-family: 'Prompt', sans-serif;
 }
 
 .gold-type-option.active {
@@ -362,7 +363,7 @@ body {
     
     .gold-type-option {
         padding: 12px;
-        font-size: 14px;
+        font-size: 15px;
     }
     
     .total-price {
@@ -410,7 +411,7 @@ body {
     
     .gold-type-option {
         padding: 10px;
-        font-size: 13px;
+        font-size: 15px;
     }
     
     .total-price {

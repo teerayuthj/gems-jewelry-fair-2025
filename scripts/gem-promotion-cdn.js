@@ -320,6 +320,7 @@
                 color: #002458 !important;
                 text-align: center;
                 position: relative;
+                font-family: 'Prompt', sans-serif;
                 padding: 8px 0;
                 text-shadow: 0 1px 2px rgba(0, 36, 88, 0.1);
             }
@@ -360,35 +361,9 @@
             
             .gem-event-date {
                 text-align: center;
-                font-size: 18px;
-                font-weight: 600;
-                color: #002458 !important;
-                margin: 0 0 24px 0;
-                background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-                padding: 12px 24px;
-                border-radius: 20px;
-                display: inline-block;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-                border: 2px solid rgba(0, 36, 88, 0.1);
-                position: relative;
-                overflow: hidden;
-            }
-            
-            .gem-event-date::before {
-                content: '📅';
-                margin-right: 8px;
                 font-size: 16px;
-            }
-            
-            .gem-event-date::after {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                height: 2px;
-                background: linear-gradient(90deg, transparent, #002458, #3b82f6, transparent);
-                border-radius: 20px 20px 0 0;
+                color: #666;
+                margin: 0 0 20px 0;
             }
             
             .gem-countdown-grid {
@@ -435,7 +410,7 @@
             
             .gem-time-label {
                 font-size: 14px;
-                color: #666666 !important;
+                color: #666;
             }
             
             .gem-countdown-ended {
@@ -464,20 +439,16 @@
             
             .gem-countdown-subtitle {
                 font-size: 16px;
-                color: #666666 !important;
+                color: #666;
                 margin-bottom: 16px;
                 font-weight: 500;
             }
             
             .gem-time-ending {
                 background: linear-gradient(135deg, #fff3cd, #ffeaa7);
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05), 0 0 0 2px #ffc107;
+                border: 2px solid #ffc107;
                 animation: gem-glow 4s ease-in-out infinite;
                 transition: all 0.3s ease;
-            }
-            
-            .gem-time-ending::before {
-                display: none;
             }
             
             .gem-time-ending .gem-time-value {
@@ -554,7 +525,7 @@
             
             .gem-discount-text {
                 font-size: 16px;
-                color: #666666 !important;
+                color: #666;
                 margin-bottom: 20px;
             }
             
@@ -616,7 +587,7 @@
             
             .gem-unlock-hint {
                 font-size: 14px;
-                color: #999999 !important;
+                color: #999;
                 margin: 8px 0;
                 font-weight: 500;
             }
