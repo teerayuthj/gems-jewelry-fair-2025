@@ -8,6 +8,7 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 10px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -34,18 +35,21 @@
     color: #1a202c;
     margin: 0;
     padding: 20px 0 10px 0;
+    font-family: 'Prompt', sans-serif;
 }
 
 @media (max-width: 768px) {
     .realtime-price-title {
-        font-size: 1.3rem;
+        font-size: 2rem;
+        font-family: 'Prompt', sans-serif;
         padding: 5px 0 3px 0;
     }
 }
 
 @media (max-width: 480px) {
     .realtime-price-title {
-        font-size: 1.1rem;
+        font-size: 1.7rem;
+        font-family: 'Prompt', sans-serif;
         padding: 10px 0;
     }
 }
@@ -404,6 +408,7 @@
     
     .price-card-title {
         font-size: 1.4rem !important;
+        font-family: 'Prompt', sans-serif;
     }
     
     .price-amount {
@@ -446,7 +451,8 @@
     }
     
     .price-card-title {
-        font-size: 1.2rem !important;
+        font-size: 1.5rem !important;
+        font-family: 'Prompt', sans-serif;
     }
     
     .price-card-type {
@@ -517,6 +523,7 @@
     
     .price-card-title {
         font-size: 1.1rem !important;
+        font-family: 'Prompt', sans-serif;
     }
     
     .price-card-type {
