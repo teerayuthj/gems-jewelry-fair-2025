@@ -16,12 +16,38 @@
     margin-bottom: 30px;
 }
 
+@media (max-width: 768px) {
+    .realtime-price-header {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .realtime-price-header {
+        margin-bottom: 10px;
+    }
+}
+
 .realtime-price-title {
     font-size: 2rem;
     font-weight: 700;
     color: #1a202c;
     margin: 0;
     padding: 20px 0 10px 0;
+}
+
+@media (max-width: 768px) {
+    .realtime-price-title {
+        font-size: 1.5rem;
+        padding: 10px 0 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .realtime-price-title {
+        font-size: 1.2rem;
+        padding: 5px 0;
+    }
 }
 
 .current-datetime {
@@ -37,6 +63,22 @@
     display: inline-block;
 }
 
+@media (max-width: 768px) {
+    .current-datetime {
+        font-size: 1rem;
+        padding: 4px 8px;
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .current-datetime {
+        font-size: 0.85rem;
+        padding: 3px 6px;
+        margin-bottom: 3px;
+    }
+}
+
 /* ====== Grid Layout - Fixed Dimensions ====== */
 .realtime-price-grid {
     display: grid;
@@ -45,12 +87,31 @@
     margin-bottom: 30px;
 }
 
+@media (max-width: 768px) {
+    .realtime-price-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .realtime-price-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 10px;
+    }
+}
+
 /* ====== Price Cards - Stable Layout ====== */
 .realtime-price-card {
     /* Fixed dimensions to prevent layout shift */
     min-height: 180px;
     min-width: 300px;
     max-width: 100%;
+    width: 100%;
     
     /* Layout properties */
     display: flex;
@@ -105,7 +166,7 @@
 }
 
 .price-card-title {
-    font-size: 2rem !important;
+    font-size: 1.5rem !important;
     font-weight: 600;
     color: #1f2937;
     margin: 0;
@@ -261,6 +322,20 @@
     border-radius: 8px;
 }
 
+@media (max-width: 768px) {
+    .realtime-footer {
+        margin-top: 15px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .realtime-footer {
+        margin-top: 10px;
+        padding: 8px;
+    }
+}
+
 .last-updated {
     display: flex;
     align-items: center;
@@ -268,6 +343,20 @@
     gap: 8px;
     font-size: 1.2rem !important;
     color: #6b7280;
+}
+
+@media (max-width: 768px) {
+    .last-updated {
+        font-size: 0.9rem !important;
+        gap: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .last-updated {
+        font-size: 0.8rem !important;
+        gap: 4px;
+    }
 }
 
 .status-indicator {
@@ -302,65 +391,82 @@
 
 /* ====== Responsive Design ====== */
 @media (max-width: 768px) {
-    .realtime-price-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-    
     .realtime-price-card {
-        min-width: 280px;
-        min-height: 160px;
-        padding: 16px;
+        min-width: 100%;
+        min-height: 120px;
+        padding: 12px;
+        margin-bottom: 8px;
     }
     
     .price-values {
-        gap: 12px;
+        gap: 8px;
     }
     
     .price-card-title {
-        font-size: 1.7rem !important;
+        font-size: 1.3rem !important;
     }
     
     .price-amount {
-        font-size: 0.9rem;
-        min-width: 60px;
+        font-size: 0.85rem;
+        min-width: 55px;
     }
     
     .price-change {
-        font-size: 0.8rem;
-        min-width: 60px;
+        font-size: 0.75rem;
+        min-width: 55px;
+    }
+    
+    .price-card-header {
+        min-height: 35px;
+        margin-bottom: 10px;
+    }
+    
+    .price-value {
+        min-height: 45px;
+        padding: 6px;
     }
 }
 
 @media (max-width: 480px) {
     .realtime-price-card {
-        min-width: 260px;
-        min-height: 140px;
-        padding: 12px;
+        min-width: 100%;
+        min-height: 100px;
+        padding: 8px;
+        margin-bottom: 6px;
     }
     
     .price-card-header {
-        min-height: 40px;
-        margin-bottom: 12px;
+        min-height: 30px;
+        margin-bottom: 8px;
     }
     
     .price-value {
-        min-height: 50px;
-        padding: 6px;
+        min-height: 35px;
+        padding: 4px;
     }
     
     .price-card-title {
-        font-size: 1.5rem !important;
+        font-size: 1.1rem !important;
+    }
+    
+    .price-card-type {
+        font-size: 0.75rem;
     }
     
     .price-amount {
-        font-size: 0.85rem;
-        min-width: 50px;
+        font-size: 0.8rem;
+        min-width: 45px;
     }
     
     .price-change {
-        font-size: 0.75rem;
-        min-width: 50px;
+        font-size: 0.7rem;
+        min-width: 45px;
+        padding: 2px 4px;
+    }
+    
+    .price-label {
+        font-size: 0.7rem;
+        margin-bottom: 2px;
     }
 }
 
@@ -388,6 +494,54 @@
 .realtime-price-card:focus-within {
     outline: 2px solid #3b82f6;
     outline-offset: 2px;
+}
+
+/* ====== Extra Small Mobile Optimization ====== */
+@media (max-width: 360px) {
+    .realtime-price-card {
+        min-width: 100%;
+        min-height: 85px;
+        padding: 6px;
+        margin-bottom: 4px;
+    }
+    
+    .price-card-header {
+        min-height: 25px;
+        margin-bottom: 6px;
+    }
+    
+    .price-value {
+        min-height: 30px;
+        padding: 3px;
+    }
+    
+    .price-card-title {
+        font-size: 0.95rem !important;
+    }
+    
+    .price-card-type {
+        font-size: 0.65rem;
+    }
+    
+    .price-amount {
+        font-size: 0.75rem;
+        min-width: 40px;
+    }
+    
+    .price-change {
+        font-size: 0.65rem;
+        min-width: 40px;
+        padding: 1px 3px;
+    }
+    
+    .price-label {
+        font-size: 0.65rem;
+        margin-bottom: 1px;
+    }
+    
+    .price-values {
+        gap: 6px;
+    }
 }
 
 /* ====== Print Styles ====== */
