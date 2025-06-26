@@ -18,13 +18,13 @@
 
 @media (max-width: 768px) {
     .realtime-price-header {
-        margin-bottom: 8px;
+        margin-bottom: 12px;
     }
 }
 
 @media (max-width: 480px) {
     .realtime-price-header {
-        margin-bottom: 5px;
+        margin-bottom: 8px;
     }
 }
 
@@ -393,9 +393,9 @@
 @media (max-width: 768px) {
     .realtime-price-card {
         min-width: 100%;
-        min-height: 100px;
-        padding: 8px;
-        margin-bottom: 6px;
+        min-height: 110px;
+        padding: 10px;
+        margin-bottom: 8px;
     }
     
     .price-values {
@@ -403,17 +403,36 @@
     }
     
     .price-card-title {
-        font-size: 1.2rem !important;
+        font-size: 1.3rem !important;
     }
     
     .price-amount {
-        font-size: 0.8rem;
-        min-width: 50px;
+        font-size: 0.85rem;
+        min-width: 55px;
     }
     
     .price-change {
-        font-size: 0.7rem;
-        min-width: 50px;
+        font-size: 0.75rem;
+        min-width: 55px;
+    }
+    
+    .price-card-header {
+        min-height: 35px;
+        margin-bottom: 8px;
+    }
+    
+    .price-value {
+        min-height: 40px;
+        padding: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .realtime-price-card {
+        min-width: 100%;
+        min-height: 90px;
+        padding: 8px;
+        margin-bottom: 6px;
     }
     
     .price-card-header {
@@ -422,51 +441,32 @@
     }
     
     .price-value {
-        min-height: 35px;
+        min-height: 32px;
         padding: 4px;
-    }
-}
-
-@media (max-width: 480px) {
-    .realtime-price-card {
-        min-width: 100%;
-        min-height: 80px;
-        padding: 6px;
-        margin-bottom: 4px;
-    }
-    
-    .price-card-header {
-        min-height: 25px;
-        margin-bottom: 4px;
-    }
-    
-    .price-value {
-        min-height: 28px;
-        padding: 3px;
     }
     
     .price-card-title {
-        font-size: 1rem !important;
+        font-size: 1.1rem !important;
     }
     
     .price-card-type {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
     }
     
     .price-amount {
-        font-size: 0.75rem;
-        min-width: 40px;
+        font-size: 0.8rem;
+        min-width: 45px;
     }
     
     .price-change {
-        font-size: 0.65rem;
-        min-width: 40px;
-        padding: 1px 3px;
+        font-size: 0.7rem;
+        min-width: 45px;
+        padding: 2px 4px;
     }
     
     .price-label {
-        font-size: 0.65rem;
-        margin-bottom: 1px;
+        font-size: 0.7rem;
+        margin-bottom: 2px;
     }
 }
 
@@ -500,47 +500,47 @@
 @media (max-width: 360px) {
     .realtime-price-card {
         min-width: 100%;
-        min-height: 70px;
-        padding: 4px;
-        margin-bottom: 3px;
+        min-height: 80px;
+        padding: 6px;
+        margin-bottom: 4px;
     }
     
     .price-card-header {
-        min-height: 20px;
-        margin-bottom: 3px;
+        min-height: 25px;
+        margin-bottom: 4px;
     }
     
     .price-value {
-        min-height: 25px;
-        padding: 2px;
+        min-height: 28px;
+        padding: 3px;
     }
     
     .price-card-title {
-        font-size: 0.9rem !important;
+        font-size: 1rem !important;
     }
     
     .price-card-type {
-        font-size: 0.6rem;
+        font-size: 0.7rem;
     }
     
     .price-amount {
-        font-size: 0.7rem;
-        min-width: 35px;
+        font-size: 0.75rem;
+        min-width: 40px;
     }
     
     .price-change {
-        font-size: 0.6rem;
-        min-width: 35px;
-        padding: 1px 2px;
+        font-size: 0.65rem;
+        min-width: 40px;
+        padding: 2px 3px;
     }
     
     .price-label {
-        font-size: 0.6rem;
+        font-size: 0.65rem;
         margin-bottom: 1px;
     }
     
     .price-values {
-        gap: 4px;
+        gap: 5px;
     }
 }
 
@@ -558,4 +558,19 @@
         background: none !important;
         color: #000 !important;
     }
+}
+
+.container {
+    max-width: 1370px !important;
+}
+
+img {
+    max-width: 100% none;
+    height: revert-layer !important;
+    border-style: none;
+}
+
+#header.gold .menu-list {
+    float: left;
+    margin: 10px 0 0 30px !important;
 }
