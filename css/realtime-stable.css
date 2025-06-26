@@ -18,13 +18,13 @@
 
 @media (max-width: 768px) {
     .realtime-price-header {
-        margin-bottom: 15px;
+        margin-bottom: 8px;
     }
 }
 
 @media (max-width: 480px) {
     .realtime-price-header {
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
 }
 
@@ -38,15 +38,15 @@
 
 @media (max-width: 768px) {
     .realtime-price-title {
-        font-size: 1.5rem;
-        padding: 10px 0 5px 0;
+        font-size: 1.3rem;
+        padding: 5px 0 3px 0;
     }
 }
 
 @media (max-width: 480px) {
     .realtime-price-title {
-        font-size: 1.2rem;
-        padding: 5px 0;
+        font-size: 1.1rem;
+        padding: 10px 0;
     }
 }
 
@@ -65,17 +65,17 @@
 
 @media (max-width: 768px) {
     .current-datetime {
-        font-size: 1rem;
-        padding: 4px 8px;
-        margin-bottom: 5px;
+        font-size: 0.9rem;
+        padding: 3px 6px;
+        margin-bottom: 3px;
     }
 }
 
 @media (max-width: 480px) {
     .current-datetime {
-        font-size: 0.85rem;
-        padding: 3px 6px;
-        margin-bottom: 3px;
+        font-size: 0.8rem;
+        padding: 2px 4px;
+        margin-bottom: 2px;
     }
 }
 
@@ -91,8 +91,8 @@
     .realtime-price-grid {
         display: flex;
         flex-direction: column;
-        gap: 8px;
-        margin-bottom: 15px;
+        gap: 6px;
+        margin-bottom: 8px;
     }
 }
 
@@ -100,8 +100,8 @@
     .realtime-price-grid {
         display: flex;
         flex-direction: column;
-        gap: 6px;
-        margin-bottom: 10px;
+        gap: 4px;
+        margin-bottom: 6px;
     }
 }
 
@@ -324,15 +324,15 @@
 
 @media (max-width: 768px) {
     .realtime-footer {
-        margin-top: 15px;
-        padding: 12px;
+        margin-top: 8px;
+        padding: 8px;
     }
 }
 
 @media (max-width: 480px) {
     .realtime-footer {
-        margin-top: 10px;
-        padding: 8px;
+        margin-top: 5px;
+        padding: 6px;
     }
 }
 
@@ -393,80 +393,80 @@
 @media (max-width: 768px) {
     .realtime-price-card {
         min-width: 100%;
-        min-height: 120px;
-        padding: 12px;
-        margin-bottom: 8px;
-    }
-    
-    .price-values {
-        gap: 8px;
-    }
-    
-    .price-card-title {
-        font-size: 1.3rem !important;
-    }
-    
-    .price-amount {
-        font-size: 0.85rem;
-        min-width: 55px;
-    }
-    
-    .price-change {
-        font-size: 0.75rem;
-        min-width: 55px;
-    }
-    
-    .price-card-header {
-        min-height: 35px;
-        margin-bottom: 10px;
-    }
-    
-    .price-value {
-        min-height: 45px;
-        padding: 6px;
-    }
-}
-
-@media (max-width: 480px) {
-    .realtime-price-card {
-        min-width: 100%;
         min-height: 100px;
         padding: 8px;
         margin-bottom: 6px;
     }
     
+    .price-values {
+        gap: 6px;
+    }
+    
+    .price-card-title {
+        font-size: 1.2rem !important;
+    }
+    
+    .price-amount {
+        font-size: 0.8rem;
+        min-width: 50px;
+    }
+    
+    .price-change {
+        font-size: 0.7rem;
+        min-width: 50px;
+    }
+    
     .price-card-header {
         min-height: 30px;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
     }
     
     .price-value {
         min-height: 35px;
         padding: 4px;
     }
+}
+
+@media (max-width: 480px) {
+    .realtime-price-card {
+        min-width: 100%;
+        min-height: 80px;
+        padding: 6px;
+        margin-bottom: 4px;
+    }
+    
+    .price-card-header {
+        min-height: 25px;
+        margin-bottom: 4px;
+    }
+    
+    .price-value {
+        min-height: 28px;
+        padding: 3px;
+    }
     
     .price-card-title {
-        font-size: 1.1rem !important;
+        font-size: 1rem !important;
     }
     
     .price-card-type {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
     
     .price-amount {
-        font-size: 0.8rem;
-        min-width: 45px;
+        font-size: 0.75rem;
+        min-width: 40px;
     }
     
     .price-change {
-        font-size: 0.7rem;
-        min-width: 45px;
-        padding: 2px 4px;
+        font-size: 0.65rem;
+        min-width: 40px;
+        padding: 1px 3px;
     }
     
     .price-label {
-        font-size: 0.7rem;
-        margin-bottom: 2px;
+        font-size: 0.65rem;
+        margin-bottom: 1px;
     }
 }
 
@@ -500,47 +500,47 @@
 @media (max-width: 360px) {
     .realtime-price-card {
         min-width: 100%;
-        min-height: 85px;
-        padding: 6px;
-        margin-bottom: 4px;
+        min-height: 70px;
+        padding: 4px;
+        margin-bottom: 3px;
     }
     
     .price-card-header {
-        min-height: 25px;
-        margin-bottom: 6px;
+        min-height: 20px;
+        margin-bottom: 3px;
     }
     
     .price-value {
-        min-height: 30px;
-        padding: 3px;
+        min-height: 25px;
+        padding: 2px;
     }
     
     .price-card-title {
-        font-size: 0.95rem !important;
+        font-size: 0.9rem !important;
     }
     
     .price-card-type {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
     }
     
     .price-amount {
-        font-size: 0.75rem;
-        min-width: 40px;
+        font-size: 0.7rem;
+        min-width: 35px;
     }
     
     .price-change {
-        font-size: 0.65rem;
-        min-width: 40px;
-        padding: 1px 3px;
+        font-size: 0.6rem;
+        min-width: 35px;
+        padding: 1px 2px;
     }
     
     .price-label {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
         margin-bottom: 1px;
     }
     
     .price-values {
-        gap: 6px;
+        gap: 4px;
     }
 }
 

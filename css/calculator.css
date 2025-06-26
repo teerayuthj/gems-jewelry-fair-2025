@@ -278,89 +278,36 @@ body {
 /* ====== Calculator Responsive ====== */
 @media (max-width: 768px) {
     .calculator-container {
-        padding: 16px;
-        margin: 0.5rem;
+        padding: 12px;
+        margin: 0.25rem;
         max-width: 100%;
     }
     
     .calculator-title {
-        font-size: 20px;
-        line-height: 1.3;
-        margin-bottom: 16px;
-    }
-    
-    .input-row {
-        flex-direction: row;
-        gap: 8px;
-    }
-    
-    .calc-input {
-        font-size: 15px;
-        padding: 10px 12px;
-    }
-    
-    .calc-select {
-        font-size: 14px;
-        padding: 10px 12px;
-    }
-    
-    .metal-option {
-        padding: 10px;
-        font-size: 13px;
-    }
-    
-    .price-info {
-        flex-direction: row;
-        gap: 8px;
-    }
-    
-    .price-item {
-        padding: 10px;
-    }
-    
-    .price-value {
         font-size: 18px;
-    }
-    
-    .total-price {
-        font-size: 20px;
-    }
-    
-    .info-text {
-        font-size: 11px;
-        padding: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .calculator-container {
-        padding: 12px;
-        margin: 0.25rem;
-    }
-    
-    .calculator-title {
-        font-size: 18px;
-        margin-bottom: 12px;
-    }
-    
-    .calc-input {
-        font-size: 14px;
-        padding: 10px 12px;
-    }
-    
-    .calc-select {
-        font-size: 13px;
-        padding: 10px 12px;
+        line-height: 1.2;
+        margin-bottom: 10px;
     }
     
     .input-row {
         flex-direction: row;
         gap: 6px;
+        margin-bottom: 10px;
+    }
+    
+    .calc-input {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+    
+    .calc-select {
+        font-size: 13px;
+        padding: 8px 10px;
     }
     
     .metal-option {
-        padding: 8px;
-        font-size: 12px;
+        padding: 10px;
+        font-size: 13px;
     }
     
     .price-info {
@@ -380,12 +327,98 @@ body {
         font-size: 18px;
     }
     
+    .info-text {
+        font-size: 11px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator-container {
+        padding: 8px;
+        margin: 0.1rem;
+    }
+    
+    .calculator-title {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+    
+    .calc-input {
+        font-size: 13px;
+        padding: 6px 8px;
+    }
+    
+    .calc-select {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+    
+    .input-row {
+        flex-direction: row;
+        gap: 4px;
+        margin-bottom: 8px;
+    }
+    
+    .metal-option {
+        padding: 6px;
+        font-size: 11px;
+    }
+    
+    .price-info {
+        flex-direction: row;
+        gap: 4px;
+    }
+    
+    .price-item {
+        padding: 6px;
+    }
+    
+    .price-value {
+        font-size: 14px;
+    }
+    
+    .total-price {
+        font-size: 16px;
+    }
+    
     .price-label {
         font-size: 10px;
     }
     
     .input-label {
-        font-size: 12px;
-        margin-bottom: 4px;
+        font-size: 11px;
+        margin-bottom: 2px;
+    }
+    
+    .input-group {
+        margin-bottom: 8px;
+    }
+    
+    .input-section {
+        margin-bottom: 12px;
+    }
+    
+    .price-display {
+        padding: 8px;
+    }
+    
+    .price-row {
+        margin-bottom: 8px;
+    }
+    
+    .total-section {
+        padding-top: 8px;
+    }
+    
+    .info-text {
+        font-size: 10px;
+        padding: 6px;
+        margin-top: 6px;
+    }
+    
+    .last-updated {
+        font-size: 9px;
+        margin-top: 6px;
     }
 }

@@ -126,5 +126,20 @@ document.addEventListener('DOMContentLoaded', function() {
           referrerpolicy="no-referrer-when-downgrade">
   </iframe>
 </div>
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.12/css/realtime.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.12/css/realtime-stable.css">
+
+<!-- HTML -->
+<div id="realtime-prices"></div>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/gh/teerayuthj/gems-jewelry-fair-2025@v1.12/scripts/realtime.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    new GemApp.RealtimePriceComponent('realtime-prices');
+});
+</script>
 </body>
 </html>
