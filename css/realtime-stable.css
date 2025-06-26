@@ -258,7 +258,7 @@
 
 /* ====== Price Amounts - Fixed Dimensions ====== */
 .price-amount {
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #1f2937;
     text-align: center;
@@ -278,7 +278,7 @@
 
 /* ====== Price Changes - Fixed Layout ====== */
 .price-change {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-weight: 600;
     text-align: center;
     
