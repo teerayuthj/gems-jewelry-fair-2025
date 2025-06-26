@@ -63,42 +63,42 @@ class GoldSilverCalculator {
                 </div>
 
                 <div class="input-section">
-                    <div class="gold-type-selector" id="goldTypeSelector">
-                        <label class="input-label">ประเภททองคำ</label>
-                        <div class="gold-type-grid">
-                            <div class="gold-type-option active" data-type="96.5_osiris">96.5% ออสสิริส</div>
-                            <div class="gold-type-option" data-type="99.99_osiris">99.99% ออสสิริส</div>
-                            <div class="gold-type-option" data-type="99.99_osiris_kg">99.99% ออสสิริส(กิโลกรัม)</div>
-                            <div class="gold-type-option" data-type="96.5_assoc">96.5% สมาคม</div>
+                    <div class="input-row">
+                        <div class="input-group" id="goldTypeSelector">
+                            <label for="goldTypeSelect" class="input-label">ประเภททองคำ</label>
+                            <select id="goldTypeSelect" class="calc-select">
+                                <option value="96.5_osiris">96.5% ออสสิริส</option>
+                                <option value="99.99_osiris">99.99% ออสสิริส</option>
+                                <option value="99.99_osiris_kg">99.99% ออสสิริส(กิโลกรัม)</option>
+                                <option value="96.5_assoc">96.5% สมาคม</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="unitSelector" class="input-label">หน่วย</label>
+                            <select id="unitSelector" class="calc-select">
+                                <option value="baht">บาททอง</option>
+                                <option value="kg">กิโลกรัม</option>
+                                <option value="gram">กรัม</option>
+                            </select>
                         </div>
                     </div>
-
                     <div class="input-group">
-                        <label for="amount" class="input-label">จำนวน</label>
-                        <div class="input-row">
-                            <div class="input-field">
-                                <input type="number" id="amount" class="calc-input" placeholder="0.00" step="0.01" min="0">
-                            </div>
-                            <div class="unit-selector">
-                                <select id="unitSelector" class="calc-select">
-                                    <option value="baht">บาททอง</option>
-                                    <option value="kg">กิโลกรัม</option>
-                                    <option value="gram">กรัม</option>
-                                </select>
-                            </div>
-                        </div>
+                        <label for="amount" class="input-label">น้ำหนัก</label>
+                        <input type="number" id="amount" class="calc-input" placeholder="0.00" step="0.01" min="0">
                     </div>
                 </div>
 
                 <div class="price-display">
-                    <div class="price-info" id="priceInfo">
-                        <div class="price-item">
-                            <div class="price-label">ราคาขาย (ต่อกรัม)</div>
-                            <div class="price-value sell-price" id="sellPrice">51,100</div>
-                        </div>
-                        <div class="price-item">
-                            <div class="price-label">ราคาซื้อ (ต่อกรัม)</div>
-                            <div class="price-value buy-price" id="buyPrice">51,200</div>
+                    <div class="price-row">
+                        <div class="price-info" id="priceInfo">
+                            <div class="price-item">
+                                <div class="price-label">ราคาขาย (ต่อกรัม)</div>
+                                <div class="price-value sell-price" id="sellPrice">51,100</div>
+                            </div>
+                            <div class="price-item">
+                                <div class="price-label">ราคาซื้อ (ต่อกรัม)</div>
+                                <div class="price-value buy-price" id="buyPrice">51,200</div>
+                            </div>
                         </div>
                     </div>
 
@@ -131,12 +131,12 @@ class GoldSilverCalculator {
         });
 
         // Gold type selector events
-        this.container.querySelectorAll('.gold-type-option').forEach(option => {
-            option.addEventListener('click', (e) => {
-                const type = e.target.dataset.type;
-                this.switchGoldType(type);
+        const goldTypeSelect = this.container.querySelector('#goldTypeSelect');
+        if (goldTypeSelect) {
+            goldTypeSelect.addEventListener('change', (e) => {
+                this.switchGoldType(e.target.value);
             });
-        });
+        }
 
         // Amount input event
         const amountInput = this.container.querySelector('#amount');
@@ -192,10 +192,10 @@ class GoldSilverCalculator {
     switchGoldType(type) {
         this.currentGoldType = type;
         
-        this.container.querySelectorAll('.gold-type-option').forEach(option => {
-            option.classList.remove('active');
-        });
-        this.container.querySelector(`[data-type="${type}"]`).classList.add('active');
+        const goldTypeSelect = this.container.querySelector('#goldTypeSelect');
+        if (goldTypeSelect) {
+            goldTypeSelect.value = type;
+        }
         
         this.updateDisplay();
     }
