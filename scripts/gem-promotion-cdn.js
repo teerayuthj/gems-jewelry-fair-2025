@@ -199,7 +199,7 @@
             
             container.innerHTML = `
                 <div class="gem-section gem-discount-section">
-                    <h3 class="gem-section-title">รหัสส่วนลดพิเศษ</h3>
+                    <h3 class="gem-section-title">รหัสส่วนลด</h3>
                     <div class="gem-discount-card ${isActive ? '' : 'gem-card-locked'}">
                         <div class="${codeClass}">${codeDisplay}</div>
                         <div class="gem-discount-text">${discountText}</div>
@@ -239,7 +239,7 @@
                     </div>
                     
                     <div class="gem-section gem-discount-section">
-                        <h3 class="gem-section-title">รหัสส่วนลดพิเศษ</h3>
+                        <h3 class="gem-section-title">รหัสส่วนลด</h3>
                         <div class="gem-discount-card ${isActive ? '' : 'gem-card-locked'}">
                             <div class="${codeClass}">${codeDisplay}</div>
                             <div class="gem-discount-text">${discountText}</div>
@@ -290,7 +290,7 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background: linear-gradient(135deg, #002458 0%, #3b82f6 100%);
+                background: linear-gradient(135deg, #002458 0%, #003875 100%);
                 border-radius: 12px;
                 padding: 2px;
                 z-index: -1;
@@ -303,7 +303,7 @@
                 left: 2px;
                 right: 2px;
                 bottom: 2px;
-                background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+                background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
                 border-radius: 10px;
                 z-index: -1;
             }
@@ -391,14 +391,14 @@
                 left: 20%;
                 right: 20%;
                 height: 3px;
-                background: linear-gradient(90deg, transparent, #002458, #3b82f6, transparent);
+                background: linear-gradient(90deg, transparent, #002458, #003875, transparent);
                 border-radius: 0 0 6px 6px;
                 opacity: 0.6;
             }
             
             .gem-time-unit:hover {
                 transform: translateY(-1px);
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(59, 130, 246, 0.3);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 36, 88, 0.3);
             }
             
             .gem-time-value {
@@ -504,14 +504,14 @@
                 left: 0;
                 right: 0;
                 height: 3px;
-                background: linear-gradient(90deg, #002458, #3b82f6, #002458);
+                background: linear-gradient(90deg, #002458, #003875, #002458);
                 border-radius: 12px 12px 0 0;
             }
             
             .gem-discount-card:hover {
                 transform: translateY(-2px);
                 box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-                border-color: #3b82f6;
+                border-color: #002458;
             }
             
             .gem-discount-code {
@@ -525,7 +525,7 @@
             
             .gem-discount-text {
                 font-size: 16px;
-                color: #666;
+                color: #333;
                 margin-bottom: 20px;
             }
             
@@ -558,12 +558,12 @@
             }
             
             .gem-copy-active {
-                background: linear-gradient(135deg, #002458 0%, #1e3a8a 100%);
+                background: linear-gradient(135deg, #002458 0%, #003875 100%);
                 box-shadow: 0 4px 12px rgba(0, 36, 88, 0.3);
             }
             
             .gem-copy-active:hover {
-                background: linear-gradient(135deg, #003875 0%, #1e40af 100%);
+                background: linear-gradient(135deg, #003875 0%, #004a94 100%);
                 transform: translateY(-2px);
                 box-shadow: 0 6px 16px rgba(0, 36, 88, 0.4);
             }
@@ -598,12 +598,21 @@
                 }
                 
                 .gem-countdown-grid {
-                    grid-template-columns: repeat(2, 1fr);
-                    gap: 12px;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 8px;
+                }
+                
+                .gem-time-unit {
+                    padding: 12px 6px;
                 }
                 
                 .gem-time-value {
-                    font-size: 24px;
+                    font-size: 22px;
+                    margin-bottom: 2px;
+                }
+                
+                .gem-time-label {
+                    font-size: 11px;
                 }
                 
                 .gem-discount-code {
